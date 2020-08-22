@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_catering_for_privatejet_catering_for_privatejetUITests : NSObject
+@end
+@implementation PodsDummy_Pods_catering_for_privatejet_catering_for_privatejetUITests
+@end
