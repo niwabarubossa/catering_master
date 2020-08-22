@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p99-7G-Yb1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -256,22 +256,22 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
             </objects>
             <point key="canvasLocation" x="296" y="118"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Or Add Rate View Controller-->
         <scene sceneID="h2P-yj-POT">
             <objects>
-                <viewController id="p99-7G-Yb1" sceneMemberID="viewController">
+                <viewController id="p99-7G-Yb1" customClass="SearchOrAddRateViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tKG-p2-zCK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where is your destination?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7m6-ds-yMV">
-                                <rect key="frame" x="85.5" y="144" width="243" height="24"/>
+                                <rect key="frame" x="85.5" y="184" width="243" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" cyan="0.40059315829999997" magenta="0.96870865679999996" yellow="0.1718214897" black="0.17451435809999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4 letter Airport Code" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1VO-Rg-LhY">
-                                <rect key="frame" x="30" y="198" width="354" height="34"/>
+                                <rect key="frame" x="30" y="238" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </textField>
@@ -288,7 +288,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in ICAO 4 letters AirportCode" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U2-J8-TME">
-                                <rect key="frame" x="74" y="262" width="266.5" height="24"/>
+                                <rect key="frame" x="74" y="302" width="266.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" cyan="0.40059315829999997" magenta="0.96870865679999996" yellow="0.1718214897" black="0.17451435809999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -300,16 +300,19 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txl-0Q-UUk">
-                                <rect key="frame" x="82" y="306" width="250" height="100"/>
+                                <rect key="frame" x="132" y="356" width="150" height="50"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="554-Ls-Qyr"/>
-                                    <constraint firstAttribute="height" constant="100" id="CVF-fY-hhY"/>
+                                    <constraint firstAttribute="width" constant="150" id="554-Ls-Qyr"/>
+                                    <constraint firstAttribute="height" constant="50" id="CVF-fY-hhY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <state key="normal" title="SEARCH">
                                     <color key="titleColor" cyan="0.40059315829999997" magenta="0.96870865679999996" yellow="0.1718214897" black="0.17451435809999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xpM-tw-Z6W" kind="show" identifier="goToSearchResultPage" id="PjO-Bg-eqw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -317,7 +320,6 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                             <constraint firstItem="6U2-J8-TME" firstAttribute="top" secondItem="1VO-Rg-LhY" secondAttribute="bottom" constant="30" id="0Vp-2s-IQh"/>
                             <constraint firstItem="txl-0Q-UUk" firstAttribute="centerX" secondItem="tKG-p2-zCK" secondAttribute="centerX" id="1Bl-u6-syz"/>
                             <constraint firstItem="rrz-Lj-2TD" firstAttribute="centerX" secondItem="tKG-p2-zCK" secondAttribute="centerX" id="6aN-68-HYs"/>
-                            <constraint firstItem="7m6-ds-yMV" firstAttribute="top" secondItem="LYv-hM-uJ0" secondAttribute="top" constant="100" id="AQv-Jg-W6Q"/>
                             <constraint firstItem="H0q-sO-Z6d" firstAttribute="centerX" secondItem="tKG-p2-zCK" secondAttribute="centerX" id="H7s-yD-6MT"/>
                             <constraint firstItem="1VO-Rg-LhY" firstAttribute="centerX" secondItem="tKG-p2-zCK" secondAttribute="centerX" id="Hzy-qX-fLa"/>
                             <constraint firstItem="1VO-Rg-LhY" firstAttribute="top" secondItem="7m6-ds-yMV" secondAttribute="bottom" constant="30" id="XnU-y9-IMj"/>
@@ -325,6 +327,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                             <constraint firstItem="7m6-ds-yMV" firstAttribute="centerX" secondItem="tKG-p2-zCK" secondAttribute="centerX" id="kj2-3j-ZSV"/>
                             <constraint firstItem="H0q-sO-Z6d" firstAttribute="top" secondItem="rrz-Lj-2TD" secondAttribute="bottom" constant="100" id="l7E-og-kju"/>
                             <constraint firstItem="6U2-J8-TME" firstAttribute="centerX" secondItem="tKG-p2-zCK" secondAttribute="centerX" id="nIB-q8-Utq"/>
+                            <constraint firstItem="txl-0Q-UUk" firstAttribute="top" secondItem="6U2-J8-TME" secondAttribute="bottom" constant="30" id="tMW-Si-Tah"/>
                             <constraint firstItem="1VO-Rg-LhY" firstAttribute="leading" secondItem="LYv-hM-uJ0" secondAttribute="leading" constant="30" id="wQB-yw-U0f"/>
                             <constraint firstItem="rrz-Lj-2TD" firstAttribute="centerY" secondItem="tKG-p2-zCK" secondAttribute="centerY" id="y3D-02-o8W"/>
                             <constraint firstItem="rrz-Lj-2TD" firstAttribute="top" secondItem="txl-0Q-UUk" secondAttribute="bottom" constant="30" id="zDe-r6-Wbq"/>
@@ -341,11 +344,11 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
             <objects>
                 <viewController id="xpM-tw-Z6W" customClass="SearchResultViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KIE-8c-2Nv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MQw-9c-dtn">
-                                <rect key="frame" x="20" y="144" width="374" height="698"/>
+                                <rect key="frame" x="20" y="100" width="374" height="688"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -358,6 +361,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssc-4T-G82"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0o4-e3-4IL"/>
                     <connections>
                         <outlet property="tableView" destination="MQw-9c-dtn" id="2vX-aZ-iyY"/>
                     </connections>
