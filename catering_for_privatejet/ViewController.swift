@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func goToNext(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToLegalPage", sender: nil)
+    }
+    
 }
 
