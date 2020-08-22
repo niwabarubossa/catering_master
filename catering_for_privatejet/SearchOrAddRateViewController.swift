@@ -21,4 +21,10 @@ class SearchOrAddRateViewController: UIViewController {
     @IBAction func addRateButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "goToAddRatePage", sender: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        if let vc = segue.destination as? UIViewController {
+            vc.modalPresentationStyle = .fullScreen
+        }
+    }
 }
