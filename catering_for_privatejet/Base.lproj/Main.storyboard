@@ -286,6 +286,9 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 <state key="normal" title="ADD YOUR RATE">
                                     <color key="titleColor" cyan="0.40059315829999997" magenta="0.96870865679999996" yellow="0.1718214897" black="0.17451435809999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addRateButtonTapped:" destination="p99-7G-Yb1" eventType="touchUpInside" id="EhN-Vq-8N9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in ICAO 4 letters AirportCode" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U2-J8-TME">
                                 <rect key="frame" x="74" y="302" width="266.5" height="24"/>
@@ -311,6 +314,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                     <color key="titleColor" cyan="0.40059315829999997" magenta="0.96870865679999996" yellow="0.1718214897" black="0.17451435809999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="searchButtonTapped:" destination="p99-7G-Yb1" eventType="touchUpInside" id="QJS-Be-m9Q"/>
                                     <segue destination="xpM-tw-Z6W" kind="show" identifier="goToSearchResultPage" id="PjO-Bg-eqw"/>
                                 </connections>
                             </button>
@@ -334,6 +338,9 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LYv-hM-uJ0"/>
                     </view>
+                    <connections>
+                        <segue destination="7gQ-V7-5zi" kind="show" identifier="goToAddRatePage" id="oU9-Q5-PGp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9F-ed-lnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -375,11 +382,11 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
             <objects>
                 <viewController id="7gQ-V7-5zi" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9i3-Fa-pYa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-Et-QNZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHn-Gj-7Qx">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
@@ -411,6 +418,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j6U-nl-Nx9"/>
                     </view>
+                    <navigationItem key="navigationItem" id="woz-Pb-tXH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBE-dm-J2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

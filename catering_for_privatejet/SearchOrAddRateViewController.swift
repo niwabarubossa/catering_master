@@ -16,7 +16,13 @@ class SearchOrAddRateViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func searchButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToSearchResultPage", sender: nil)
+    }
+    
+    @IBAction func addRateButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToAddRatePage", sender: nil)
+    }
     /*
     // MARK: - Navigation
 
@@ -24,7 +30,7 @@ class SearchOrAddRateViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }goToSearchResultPage
+    }
     */
 
 }
