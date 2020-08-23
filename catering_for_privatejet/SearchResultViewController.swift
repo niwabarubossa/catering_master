@@ -7,26 +7,18 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class SearchResultViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var dataSource:[Dictionary<String,String>] = [
-        ["resutaurantName":"レストランA",
-         "adress": "adressA"
-        ],
-        ["resutaurantName":"レストランB",
-         "adress": "adressB"
-        ],
-        ["resutaurantName":"レストランC",
-         "adress": "adressC"
-        ],
-    ]
+    private var dataSource:[Dictionary<String,Any>] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewSetup()
+        self.getFirestoreData()
     }
 }
 
@@ -41,8 +33,8 @@ extension SearchResultViewController: UITableViewDataSource,UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath ) as! SearchResultCell
         cell.selectionStyle = .none
-        cell.restaurantNameLabel.text = self.dataSource[indexPath.row]["resutaurantName"]
-        cell.adressLabel.text = self.dataSource[indexPath.row]["adress"]
+        cell.restaurantNameLabel.text = self.dataSource[indexPath.row]["restaurant_name"] as? String
+//        cell.adressLabel.text = self.dataSource[indexPath.row]["adress"] as! String
         return cell
     }
     
@@ -56,6 +48,21 @@ extension SearchResultViewController: UITableViewDataSource,UITableViewDelegate 
 
 }
 
+extension SearchResultViewController{
+    private func getFirestoreData(){
+        let db = Firestore.firestore()
+        db.collection("restaurants").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.dataSource.append(document.data())
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+}
 
 
 
