@@ -22,9 +22,9 @@ class GetImageViewController: UIViewController {
     }
     
     @IBAction func getButtonTapped(_ sender: Any) {
-        self.setFirestoreTestData(restaurant_name:"restaurant_A")
-        self.setFirestoreTestData(restaurant_name:"restaurant_B")
-        self.setFirestoreTestData(restaurant_name:"restaurant_C")
+//        self.setFirestoreTestData(restaurant_name:"restaurant_A")
+//        self.setFirestoreTestData(restaurant_name:"restaurant_B")
+//        self.setFirestoreTestData(restaurant_name:"restaurant_C")
 //        let storage = Storage.storage()
 //        let storageRef = storage.reference(forURL: "gs://catering-for-private-jet.appspot.com")
 //        let islandRef = storageRef.child("image/00861DAC-393B-488B-A963-A93A188A687B/0.jpg")
