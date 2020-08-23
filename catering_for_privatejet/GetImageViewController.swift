@@ -56,7 +56,7 @@ extension GetImageViewController{
             "restaurant_name": restaurant_name,
             "created_at": Date(),
             "review_score": 5,
-            "image_url": ["urlA","urlB","最新３件のみ"],
+            "image_url": ["image/00861DAC-393B-488B-A963-A93A188A687B/0.jpg"],
             "latest_comments": ["comment_A","comment_B","comment_C"],
             "icao_code":["AAAA","BBBB","CCCC"]
         ] as [String : Any]
