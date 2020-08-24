@@ -10,32 +10,16 @@ import UIKit
 
 class TempViewController: UIViewController {
     
-    var data:Dictionary<String,Any> = [:] {
-        didSet{
-            print("data!!")
-            print(data)
-        }
-    }
+    var data:Dictionary<String,Any> = [:] 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setData(data: self.data)
-        // Do any additional setup after loading the view.
     }
     
     private func setData(data:Dictionary<String,Any>){
         NotificationCenter.default.post(name: .notifyTempDataToRestaurantDetail, object: nil, userInfo: data)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
