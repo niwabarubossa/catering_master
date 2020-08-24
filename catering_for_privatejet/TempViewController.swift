@@ -18,6 +18,7 @@ class TempViewController: UIViewController {
     }
     
     private func setData(data:Dictionary<String,Any>){
+        //containerviewの中身を実装しているVCへデータを伝送。UserNotification Post経由で
         NotificationCenter.default.post(name: .notifyTempDataToRestaurantDetail, object: nil, userInfo: data)
     }
 
