@@ -12,6 +12,7 @@ import FirebaseFirestore
 class SearchResultViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    private var sendIndexPath:IndexPath = IndexPath(row: 0, section: 0)
     
     private var dataSource:[Dictionary<String,Any>] = []
 
@@ -48,7 +49,22 @@ extension SearchResultViewController: UITableViewDataSource,UITableViewDelegate 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          return 180
      }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.sendIndexPath = indexPath
+        self.performSegue(withIdentifier: "goToRestaurantDetailPage", sender: nil)
+//        let myViewController:RestaurantDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailViewController") as! RestaurantDetailViewController
+//        myViewController.data = self.dataSource[self.sendIndexPath.row]
+//        self.present(myViewController, animated: true, completion: nil)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToRestaurantDetailPage" {
+            let nextVC = segue.destination as! TempViewController
+            nextVC.data = self.dataSource[self.sendIndexPath.row]
+        }
+    }
+    
 }
 
 extension SearchResultViewController{
