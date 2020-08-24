@@ -16,6 +16,11 @@ class RestaurantDetailViewController: UIViewController {
         super.viewDidLoad()
         print("data")
         print("\(data)")
+        NotificationCenter.default.addObserver(self, selector: #selector(piyoFunc(notification:)), name: .notifyTempDataToRestaurantDetail, object: nil)
+    }
+    
+    @objc func piyoFunc(notification: NSNotification?) {
+       let data = notification?.userInfo!["restaurant_name"]
     }
     
 }

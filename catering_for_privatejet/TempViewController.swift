@@ -19,10 +19,13 @@ class TempViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setData(data: self.data)
         // Do any additional setup after loading the view.
     }
     
+    private func setData(data:Dictionary<String,Any>){
+        NotificationCenter.default.post(name: .notifyTempDataToRestaurantDetail, object: nil, userInfo: data)
+    }
 
     /*
     // MARK: - Navigation
@@ -34,4 +37,8 @@ class TempViewController: UIViewController {
     }
     */
 
+}
+
+extension Notification.Name {
+   static let notifyTempDataToRestaurantDetail = Notification.Name("notifyTempDataToRestaurantDetail")
 }
