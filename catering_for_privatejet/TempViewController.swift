@@ -10,7 +10,7 @@ import UIKit
 
 class TempViewController: UIViewController {
     
-    var data:Dictionary<String,Any> = [:] 
+    var data:Dictionary<String,Any> = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
