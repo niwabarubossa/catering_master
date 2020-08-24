@@ -52,7 +52,9 @@ extension SearchResultViewController: UITableViewDataSource,UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.sendIndexPath = indexPath
-        self.performSegue(withIdentifier: "goToRestaurantDetailPage", sender: nil)
+//        let myViewController:RestaurantDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailViewController") as! RestaurantDetailViewController
+//        myViewController.data = self.dataSource[self.sendIndexPath.row]
+//        self.present(myViewController, animated: true, completion: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
