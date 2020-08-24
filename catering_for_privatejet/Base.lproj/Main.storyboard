@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lVr-F6-NjW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p99-7G-Yb1">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -371,6 +371,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                     <navigationItem key="navigationItem" id="0o4-e3-4IL"/>
                     <connections>
                         <outlet property="tableView" destination="MQw-9c-dtn" id="2vX-aZ-iyY"/>
+                        <segue destination="lVr-F6-NjW" kind="show" identifier="goToRestaurantDetailPage" id="1AH-1X-MP8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcN-OV-1J7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -706,11 +707,11 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
             <objects>
                 <viewController id="lVr-F6-NjW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0VB-b4-dw0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYb-dC-YTx">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbO-gi-gZR">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
@@ -742,15 +743,16 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lXz-Cz-iM1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="v4g-R2-6vS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXf-v9-iON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3346" y="-50"/>
         </scene>
-        <!--View Controller-->
+        <!--Restaurant Detail View Controller-->
         <scene sceneID="d8J-Df-3Q3">
             <objects>
-                <viewController id="eQR-2k-1ef" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestaurantDetailViewController" id="eQR-2k-1ef" customClass="RestaurantDetailViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U1d-C3-3c5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
