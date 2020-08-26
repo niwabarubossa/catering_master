@@ -376,10 +376,10 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
             </objects>
             <point key="canvasLocation" x="2387" y="-250"/>
         </scene>
-        <!--View Controller-->
+        <!--When Search Restaurant Temp View Controller-->
         <scene sceneID="vf4-hG-3nV">
             <objects>
-                <viewController id="7gQ-V7-5zi" sceneMemberID="viewController">
+                <viewController id="7gQ-V7-5zi" customClass="WhenSearchRestaurantTempViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9i3-Fa-pYa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,10 +423,10 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
             </objects>
             <point key="canvasLocation" x="3345" y="772"/>
         </scene>
-        <!--View Controller-->
+        <!--Input Add Rate View Controller-->
         <scene sceneID="QcK-Xg-kIl">
             <objects>
-                <viewController id="r5Y-YY-F4g" sceneMemberID="viewController">
+                <viewController id="r5Y-YY-F4g" customClass="InputAddRateViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8R7-mJ-6ie">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

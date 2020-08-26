@@ -17,7 +17,6 @@ class WhenSearchRestaurantTempViewController: UIViewController {
     }
     
     private func setData(data:Dictionary<String,Any>){
-        //containerviewの中身を実装しているVCへデータを伝送。UserNotification Post経由で
         NotificationCenter.default.post(name: .notifyTempDataToAddRatePage, object: nil, userInfo: data)
     }
 

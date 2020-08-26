@@ -11,7 +11,8 @@ import UIKit
 class SearchRestaurantWhenAddRateViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    var dataSource:[Dictionary<String,String>] = [
+    private var sendIndexPath:IndexPath = IndexPath(row: 0, section: 0)
+    var dataSource:[Dictionary<String,Any>] = [
         ["test":"test"],
         ["test":"test"],
         ["test":"test"],
@@ -24,6 +25,7 @@ class SearchRestaurantWhenAddRateViewController: UIViewController {
     
     @IBAction func searchButtonTapped(_ sender: Any) {
         //did select使うやつ
+        self.tableView.isHidden = false
     }
 
 }
@@ -41,7 +43,7 @@ extension SearchRestaurantWhenAddRateViewController: UITableViewDataSource,UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchRestaurantNameTableViewCell", for: indexPath ) as! SearchRestaurantNameTableViewCell
         cell.selectionStyle = .none
         if let restaurantName = self.dataSource[indexPath.row]["test"]{
-            cell.restaurantNameLabel.text = restaurantName
+            cell.restaurantNameLabel.text = restaurantName as! String
         }
         return cell
     }
@@ -52,7 +54,15 @@ extension SearchRestaurantWhenAddRateViewController: UITableViewDataSource,UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: false)
+        self.sendIndexPath = indexPath
         self.performSegue(withIdentifier: "goToAddRatePage", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToAddRatePage" {
+            let nextVC = segue.destination as! WhenSearchRestaurantTempViewController
+            nextVC.data = self.dataSource[self.sendIndexPath.row]
+        }
     }
     
 }
