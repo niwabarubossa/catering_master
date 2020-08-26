@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2B09A0A424F680D80035AC66 /* SearchRestaurantWhenAddRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09A0A324F680D80035AC66 /* SearchRestaurantWhenAddRateViewController.swift */; };
+		2B09A0A724F6846E0035AC66 /* SearchRestaurantNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09A0A524F6846E0035AC66 /* SearchRestaurantNameTableViewCell.swift */; };
+		2B09A0A824F6846E0035AC66 /* SearchRestaurantNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B09A0A624F6846E0035AC66 /* SearchRestaurantNameTableViewCell.xib */; };
 		2B27D10D24F3C7BA003E60D2 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B27D10C24F3C7BA003E60D2 /* RestaurantDetailViewController.swift */; };
 		2B27D10F24F3CC4F003E60D2 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B27D10E24F3CC4F003E60D2 /* TempViewController.swift */; };
 		2B96E61624F1257B0074B922 /* SearchOrAddRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96E61524F1257B0074B922 /* SearchOrAddRateViewController.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		0B742E36C1ABBFF29B56CBC5 /* Pods-catering_for_privatejet-catering_for_privatejetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catering_for_privatejet-catering_for_privatejetUITests.release.xcconfig"; path = "Target Support Files/Pods-catering_for_privatejet-catering_for_privatejetUITests/Pods-catering_for_privatejet-catering_for_privatejetUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B09A0A324F680D80035AC66 /* SearchRestaurantWhenAddRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRestaurantWhenAddRateViewController.swift; sourceTree = "<group>"; };
+		2B09A0A524F6846E0035AC66 /* SearchRestaurantNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRestaurantNameTableViewCell.swift; sourceTree = "<group>"; };
+		2B09A0A624F6846E0035AC66 /* SearchRestaurantNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRestaurantNameTableViewCell.xib; sourceTree = "<group>"; };
 		2B27D10C24F3C7BA003E60D2 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		2B27D10E24F3CC4F003E60D2 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		2B96E61524F1257B0074B922 /* SearchOrAddRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOrAddRateViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				2B27D10C24F3C7BA003E60D2 /* RestaurantDetailViewController.swift */,
 				2B27D10E24F3CC4F003E60D2 /* TempViewController.swift */,
 				2B09A0A324F680D80035AC66 /* SearchRestaurantWhenAddRateViewController.swift */,
+				2B09A0A524F6846E0035AC66 /* SearchRestaurantNameTableViewCell.swift */,
+				2B09A0A624F6846E0035AC66 /* SearchRestaurantNameTableViewCell.xib */,
 			);
 			path = catering_for_privatejet;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 				2BAC1EF324DAB42F005D01B7 /* LaunchScreen.storyboard in Resources */,
 				2BAC1EF024DAB42F005D01B7 /* Assets.xcassets in Resources */,
 				2BC9A6C424EFFCCE00750A8D /* GoogleService-Info.plist in Resources */,
+				2B09A0A824F6846E0035AC66 /* SearchRestaurantNameTableViewCell.xib in Resources */,
 				2BAC1F2124DABBED005D01B7 /* SearchResultCell.xib in Resources */,
 				2BAC1EEE24DAB42E005D01B7 /* Main.storyboard in Resources */,
 			);
@@ -440,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BAC1EEB24DAB42E005D01B7 /* ViewController.swift in Sources */,
+				2B09A0A724F6846E0035AC66 /* SearchRestaurantNameTableViewCell.swift in Sources */,
 				2B96E61624F1257B0074B922 /* SearchOrAddRateViewController.swift in Sources */,
 				2BAC1EE724DAB42E005D01B7 /* AppDelegate.swift in Sources */,
 				2BC9A6C624EFFECD00750A8D /* PhotoUploadViewController.swift in Sources */,

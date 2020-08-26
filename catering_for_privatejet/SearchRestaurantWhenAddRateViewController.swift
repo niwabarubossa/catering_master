@@ -10,13 +10,46 @@ import UIKit
 
 class SearchRestaurantWhenAddRateViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    var dataSource:[Dictionary<String,String>] = [
+        ["test":"test"],
+        ["test":"test"],
+        ["test":"test"],
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableViewSetup()
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToAddRatePage", sender: nil)
+//        self.performSegue(withIdentifier: "goToAddRatePage", sender: nil)
         //did select使うやつ
     }
 
 }
+
+extension SearchRestaurantWhenAddRateViewController: UITableViewDataSource,UITableViewDelegate {
+    
+    private func tableViewSetup(){
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "SearchRestaurantNameTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchRestaurantNameTableViewCell")
+        self.tableView.isHidden = true
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchRestaurantNameTableViewCell", for: indexPath ) as! SearchRestaurantNameTableViewCell
+        cell.selectionStyle = .none
+        if let restaurantName = self.dataSource[indexPath.row]["test"]{
+            cell.restaurantNameLabel.text = restaurantName
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.dataSource.count
+    }
+    
+}
+

@@ -763,6 +763,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                     </view>
                     <navigationItem key="navigationItem" id="bse-Hv-cA8"/>
                     <connections>
+                        <outlet property="tableView" destination="VAA-bj-ug7" id="zCA-xd-MSP"/>
                         <segue destination="7gQ-V7-5zi" kind="show" identifier="goToAddRatePage" id="2sk-kj-pGE"/>
                     </connections>
                 </viewController>
