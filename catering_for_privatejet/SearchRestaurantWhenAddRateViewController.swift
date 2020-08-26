@@ -23,7 +23,6 @@ class SearchRestaurantWhenAddRateViewController: UIViewController {
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
-//        self.performSegue(withIdentifier: "goToAddRatePage", sender: nil)
         //did select使うやつ
     }
 
@@ -49,6 +48,11 @@ extension SearchRestaurantWhenAddRateViewController: UITableViewDataSource,UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: false)
+        self.performSegue(withIdentifier: "goToAddRatePage", sender: nil)
     }
     
 }
