@@ -17,14 +17,5 @@ class SearchOrAddRateViewController: UIViewController {
     @IBAction func searchButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "goToSearchResultPage", sender: nil)
     }
-    
-    @IBAction func addRateButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToAddRateSearchRestaurantPage", sender: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if let vc = segue.destination as? UIViewController {
-            vc.modalPresentationStyle = .fullScreen
-        }
-    }
+
 }
