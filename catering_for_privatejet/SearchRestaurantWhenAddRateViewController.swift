@@ -7,16 +7,13 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class SearchRestaurantWhenAddRateViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     private var sendIndexPath:IndexPath = IndexPath(row: 0, section: 0)
-    var dataSource:[Dictionary<String,Any>] = [
-        ["test":"test"],
-        ["test":"test"],
-        ["test":"test"],
-    ]
+    var dataSource:[Dictionary<String,Any>] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +21,19 @@ class SearchRestaurantWhenAddRateViewController: UIViewController {
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
-        //did select使うやつ
-        self.tableView.isHidden = false
+        self.dataSource = []
+        let db = Firestore.firestore()
+        db.collection("restaurants").whereField("restaurant_name", isEqualTo: "restaurant_A").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.dataSource.append(document.data() as! [String : AnyObject])
+                }
+                self.tableView.reloadData()
+                self.tableView.isHidden = false
+            }
+        }
     }
 
 }
@@ -42,7 +50,7 @@ extension SearchRestaurantWhenAddRateViewController: UITableViewDataSource,UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchRestaurantNameTableViewCell", for: indexPath ) as! SearchRestaurantNameTableViewCell
         cell.selectionStyle = .none
-        if let restaurantName = self.dataSource[indexPath.row]["test"]{
+        if let restaurantName = self.dataSource[indexPath.row]["restaurant_name"]{
             cell.restaurantNameLabel.text = restaurantName as! String
         }
         return cell
