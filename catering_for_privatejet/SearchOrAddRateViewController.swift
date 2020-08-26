@@ -19,7 +19,7 @@ class SearchOrAddRateViewController: UIViewController {
     }
     
     @IBAction func addRateButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToAddRatePage", sender: nil)
+        self.performSegue(withIdentifier: "goToAddRateSearchRestaurantPage", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {

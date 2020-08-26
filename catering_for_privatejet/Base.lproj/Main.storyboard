@@ -288,6 +288,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 </state>
                                 <connections>
                                     <action selector="addRateButtonTapped:" destination="p99-7G-Yb1" eventType="touchUpInside" id="EhN-Vq-8N9"/>
+                                    <segue destination="Xm6-v3-6Ky" kind="show" identifier="goToAddRateSearchRestaurantPage" id="j8w-ZP-mBi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in ICAO 4 letters AirportCode" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U2-J8-TME">
@@ -338,9 +339,6 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LYv-hM-uJ0"/>
                     </view>
-                    <connections>
-                        <segue destination="7gQ-V7-5zi" kind="show" identifier="goToAddRatePage" id="oU9-Q5-PGp"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9F-ed-lnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -423,7 +421,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBE-dm-J2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185.507246376812" y="778.79464285714278"/>
+            <point key="canvasLocation" x="3032" y="774"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QcK-Xg-kIl">
@@ -700,7 +698,36 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cno-xI-nKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2940.579710144928" y="803.57142857142856"/>
+            <point key="canvasLocation" x="3907" y="907"/>
+        </scene>
+        <!--Search Restaurant When Add Rate View Controller-->
+        <scene sceneID="4d2-fE-Y7t">
+            <objects>
+                <viewController id="Xm6-v3-6Ky" customClass="SearchRestaurantWhenAddRateViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uS2-Jt-JAC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0X-kR-SEZ">
+                                <rect key="frame" x="184" y="463" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="Xm6-v3-6Ky" eventType="touchUpInside" id="JaT-8Q-gMs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Kg9-Xm-kyP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bse-Hv-cA8"/>
+                    <connections>
+                        <segue destination="7gQ-V7-5zi" kind="show" identifier="goToAddRatePage" id="2sk-kj-pGE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPn-cq-zqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168" y="773"/>
         </scene>
         <!--Temp View Controller-->
         <scene sceneID="tHI-FZ-Nho">
@@ -885,7 +912,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GC-Wr-52b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4609" y="85"/>
+            <point key="canvasLocation" x="5200" y="-50"/>
         </scene>
         <!--Photo Upload View Controller-->
         <scene sceneID="Oe6-GI-7tH">
