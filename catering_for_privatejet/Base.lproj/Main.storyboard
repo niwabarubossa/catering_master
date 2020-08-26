@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p99-7G-Yb1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uj2-4G-K9d">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-572" y="118"/>
+            <point key="canvasLocation" x="-2703" y="118"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="LqV-kF-dG4">
@@ -254,7 +254,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Hj-qx-L0J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296" y="118"/>
+            <point key="canvasLocation" x="-1477" y="118"/>
         </scene>
         <!--Search Or Add Rate View Controller-->
         <scene sceneID="h2P-yj-POT">
@@ -287,7 +287,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                     <color key="titleColor" cyan="0.40059315829999997" magenta="0.96870865679999996" yellow="0.1718214897" black="0.17451435809999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="addRateButtonTapped:" destination="p99-7G-Yb1" eventType="touchUpInside" id="EhN-Vq-8N9"/>
+                                    <segue destination="Xm6-v3-6Ky" kind="show" identifier="goToAddRateSearchRestaurantPage" id="j8w-ZP-mBi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in ICAO 4 letters AirportCode" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U2-J8-TME">
@@ -338,9 +338,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LYv-hM-uJ0"/>
                     </view>
-                    <connections>
-                        <segue destination="7gQ-V7-5zi" kind="show" identifier="goToAddRatePage" id="oU9-Q5-PGp"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="i9T-Ds-CKh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9F-ed-lnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -351,11 +349,11 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
             <objects>
                 <viewController id="xpM-tw-Z6W" customClass="SearchResultViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KIE-8c-2Nv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MQw-9c-dtn">
-                                <rect key="frame" x="20" y="100" width="374" height="688"/>
+                                <rect key="frame" x="20" y="188" width="374" height="654"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -376,18 +374,18 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcN-OV-1J7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2186" y="-49"/>
+            <point key="canvasLocation" x="2387" y="-250"/>
         </scene>
-        <!--View Controller-->
+        <!--When Search Restaurant Temp View Controller-->
         <scene sceneID="vf4-hG-3nV">
             <objects>
-                <viewController id="7gQ-V7-5zi" sceneMemberID="viewController">
+                <viewController id="7gQ-V7-5zi" customClass="WhenSearchRestaurantTempViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9i3-Fa-pYa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-Et-QNZ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LHn-Gj-7Qx">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
@@ -423,12 +421,12 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBE-dm-J2F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185.507246376812" y="778.79464285714278"/>
+            <point key="canvasLocation" x="3345" y="772"/>
         </scene>
-        <!--View Controller-->
+        <!--Input Add Rate View Controller-->
         <scene sceneID="QcK-Xg-kIl">
             <objects>
-                <viewController id="r5Y-YY-F4g" sceneMemberID="viewController">
+                <viewController id="r5Y-YY-F4g" customClass="InputAddRateViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8R7-mJ-6ie">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -700,18 +698,89 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cno-xI-nKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2940.579710144928" y="803.57142857142856"/>
+            <point key="canvasLocation" x="4435" y="906"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="C24-ES-gTb">
+            <objects>
+                <navigationController id="Uj2-4G-K9d" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BF6-aO-F2d">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="p99-7G-Yb1" kind="relationship" relationship="rootViewController" id="zMw-ul-hZL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vhw-mD-OQd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="268" y="118"/>
+        </scene>
+        <!--Search Restaurant When Add Rate View Controller-->
+        <scene sceneID="4d2-fE-Y7t">
+            <objects>
+                <viewController id="Xm6-v3-6Ky" customClass="SearchRestaurantWhenAddRateViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uS2-Jt-JAC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0X-kR-SEZ">
+                                <rect key="frame" x="183" y="364" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonTapped:" destination="Xm6-v3-6Ky" eventType="touchUpInside" id="JaT-8Q-gMs"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="beb-Ma-CPp">
+                                <rect key="frame" x="87" y="289" width="240" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Input Restaurant Name.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL9-lX-j3r">
+                                <rect key="frame" x="87" y="216" width="240" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VAA-bj-ug7">
+                                <rect key="frame" x="87" y="421" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If no? Your review is first!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUg-y7-uoS">
+                                <rect key="frame" x="112" y="649" width="191" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Kg9-Xm-kyP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bse-Hv-cA8"/>
+                    <connections>
+                        <outlet property="tableView" destination="VAA-bj-ug7" id="zCA-xd-MSP"/>
+                        <segue destination="7gQ-V7-5zi" kind="show" identifier="goToAddRatePage" id="2sk-kj-pGE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPn-cq-zqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2457.971014492754" y="745.98214285714278"/>
         </scene>
         <!--Temp View Controller-->
         <scene sceneID="tHI-FZ-Nho">
             <objects>
                 <viewController id="lVr-F6-NjW" customClass="TempViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0VB-b4-dw0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYb-dC-YTx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbO-gi-gZR">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
@@ -747,7 +816,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXf-v9-iON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3346" y="-50"/>
+            <point key="canvasLocation" x="3345" y="-250"/>
         </scene>
         <!--Restaurant Detail View Controller-->
         <scene sceneID="d8J-Df-3Q3">
@@ -885,7 +954,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GC-Wr-52b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4609" y="85"/>
+            <point key="canvasLocation" x="4435" y="-116"/>
         </scene>
         <!--Photo Upload View Controller-->
         <scene sceneID="Oe6-GI-7tH">
