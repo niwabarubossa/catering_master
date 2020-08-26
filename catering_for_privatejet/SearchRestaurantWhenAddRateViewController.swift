@@ -18,6 +18,7 @@ class SearchRestaurantWhenAddRateViewController: UIViewController {
     
     @IBAction func searchButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "goToAddRatePage", sender: nil)
+        //did select使うやつ
     }
     
     /*
