@@ -41,7 +41,6 @@ extension PhotoUploadViewController: UINavigationControllerDelegate {
             let controller = UIImagePickerController()
             controller.delegate = self
             controller.sourceType = UIImagePickerController.SourceType.photoLibrary
-//ok
             present(controller, animated: true, completion: nil)
         }
     }
