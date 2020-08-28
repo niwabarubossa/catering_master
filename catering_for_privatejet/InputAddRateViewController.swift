@@ -8,12 +8,13 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseFirestore
 
 class InputAddRateViewController: UIViewController {
 
     var data:Dictionary<String,Any> = [:]
     var pngImageArray:[Data] = []
-    
+    var restaurantDocumentId = ""
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var centerImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
@@ -42,8 +43,23 @@ class InputAddRateViewController: UIViewController {
      }
     
     @IBAction func submitRate(_ sender: Any) {
+        if let restaurantDocumentId = data["restaurant_id"]{
+            //２回め以降の場合
+            self.restaurantDocumentId = restaurantDocumentId as! String
+            //self.updateToFirestore(ref: newRestaurantDocumentRef, data: newRestaurantData)
+        }else{
+            let newRestaurantDocumentRef = Firestore.firestore().collection("restaurants").document()
+            self.restaurantDocumentId = newRestaurantDocumentRef.documentID
+            let newRestaurantData:[String:Any] = [
+                "restaurant_id": newRestaurantDocumentRef.documentID,
+                "created_at": Date()
+            ]
+            self.saveToFirestore(ref: newRestaurantDocumentRef, data: newRestaurantData)
+        }
+        //restaurantに
         for pngImage in pngImageArray {
             self.saveToFireStorage(data: pngImage)
+            //ひもづいてfirestoreにも保存している（image＿urlを）
         }
     }
     
@@ -83,9 +99,36 @@ extension InputAddRateViewController: UIImagePickerControllerDelegate {
     private func saveToFireStorage(data: Data){
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://catering-for-private-jet.appspot.com")
-        let reference = storageRef.child("image/" + String(Int.random(in: 1 ... 100)) + ".jpg")
+        let reference = storageRef.child("image/" + String(Int.random(in: 1 ... 100000)) + ".jpg")
         reference.putData(data, metadata: nil, completion: { metaData, error in
-            print(metaData?.name)
+            if let path = metaData?.name{
+                self.saveImagePathToFirestore(path: path)
+            }
         })
     }
+    
+    private func saveImagePathToFirestore(path:String){
+        // submit -------------------------------------------------------------------------------------
+        let db = Firestore.firestore()
+        var ref: DocumentReference? = nil
+        ref = db.collection("restaurants").document(self.restaurantDocumentId).collection("images").document()
+        let document_id = ref?.documentID as! String
+        let submit_data = [
+            "id": document_id,
+            "path":path,
+            "created_at": Date(),
+        ] as [String : Any]
+        self.saveToFirestore(ref: ref, data: submit_data)
+    }
+    
+    private func saveToFirestore(ref:DocumentReference?,data:[String:Any]){
+        ref?.setData(data){ err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    
 }
