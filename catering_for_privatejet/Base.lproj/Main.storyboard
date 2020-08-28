@@ -315,7 +315,6 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 </state>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="p99-7G-Yb1" eventType="touchUpInside" id="QJS-Be-m9Q"/>
-                                    <segue destination="xpM-tw-Z6W" kind="show" identifier="goToSearchResultPage" id="PjO-Bg-eqw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -339,6 +338,9 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                         <viewLayoutGuide key="safeArea" id="LYv-hM-uJ0"/>
                     </view>
                     <navigationItem key="navigationItem" id="i9T-Ds-CKh"/>
+                    <connections>
+                        <segue destination="xpM-tw-Z6W" kind="show" identifier="goToSearchResultPage" id="7KF-7V-a79"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9F-ed-lnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -762,8 +764,16 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                     </view>
                     <connections>
                         <outlet property="centerImageView" destination="x2A-kN-lVE" id="dWr-Tb-QBH"/>
+                        <outlet property="contactPersonTextField" destination="tf9-TX-PTt" id="cGP-Yf-WFq"/>
+                        <outlet property="emailAdressTextField" destination="ckO-ls-iaY" id="9MX-MJ-KaF"/>
+                        <outlet property="firstICAOTextField" destination="wb7-xu-o9m" id="wst-jo-uTs"/>
                         <outlet property="leftImageView" destination="mrL-zY-kuj" id="YmN-oy-VsL"/>
+                        <outlet property="restaurantAdressTextField" destination="FBf-Dj-ESk" id="Sz4-QN-KUY"/>
+                        <outlet property="restaurantTextField" destination="b2p-aH-fyA" id="EMB-MK-S89"/>
                         <outlet property="rightImageView" destination="B0A-La-Dnc" id="EgJ-6R-Srn"/>
+                        <outlet property="secondICAOTextField" destination="QkX-m1-Ksj" id="IEZ-ft-IY0"/>
+                        <outlet property="telephoneNumberTextField" destination="2P5-PB-emV" id="jEl-Rf-wYa"/>
+                        <outlet property="thirdICAOTextField" destination="nQX-6s-TV3" id="rPO-GR-YSe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cno-xI-nKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
