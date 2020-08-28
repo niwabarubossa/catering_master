@@ -13,27 +13,33 @@ class InputAddRateViewController: UIViewController {
 
     var data:Dictionary<String,Any> = [:]
     var pngImageArray:[Data] = []
+    
+    @IBOutlet weak var leftImageView: UIImageView!
+    @IBOutlet weak var centerImageView: UIImageView!
+    @IBOutlet weak var rightImageView: UIImageView!
+    
 
      override func viewDidLoad() {
-         super.viewDidLoad()
-         NotificationCenter.default.addObserver(self, selector: #selector(setData(notification:)), name: .notifyTempDataToAddRatePage, object: nil)
+        super.viewDidLoad()
+        self.imageViewSetup()
      }
+    
+    @IBAction func cameraButtonTapped(_ sender: Any) {
+        self.pickImageFromLibrary()
+    }
+    
+    private func imageViewSetup(){
+        let imageViewArray = [leftImageView,centerImageView,rightImageView]
+        for imageview in imageViewArray {
+            imageview?.isHidden = true
+        }
+    }
 
      @objc func setData(notification: NSNotification?) {
 //        let data = notification?.userInfo!["restaurant_name"]
         print("notification?.userInfo")
         print("\(notification?.userInfo)")
      }
-    @IBAction func testButtonTapped(_ sender: Any) {
-        self.pickImageFromLibrary()
-    }
-    @IBAction func testButton2Tapped(_ sender: Any) {
-        self.pickImageFromLibrary()
-    }
-    @IBAction func testButton3Tapped(_ sender: Any) {
-        self.pickImageFromLibrary()
-    }
-    
     
     @IBAction func submitRate(_ sender: Any) {
         for pngImage in pngImageArray {
@@ -45,7 +51,7 @@ class InputAddRateViewController: UIViewController {
 
 
 extension InputAddRateViewController: UINavigationControllerDelegate {
-    func pickImageFromLibrary() {
+    @objc func pickImageFromLibrary() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
             let controller = UIImagePickerController()
             controller.delegate = self
@@ -61,10 +67,19 @@ extension InputAddRateViewController: UIImagePickerControllerDelegate {
         let selectedUIImage = info[.originalImage] as! UIImage
         if let pngImage = selectedUIImage.pngData() {
             self.pngImageArray.append(pngImage)
-            
+            let imageViewArray:[UIImageView] = [self.leftImageView,self.centerImageView,self.rightImageView]
+            for imageview in imageViewArray {
+                if imageview.isHidden == true {
+                    imageview.image = selectedUIImage
+                    imageview.isHidden = false
+                    break;
+                }
+            }
         }
-            dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+        
     }
+    
     private func saveToFireStorage(data: Data){
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://catering-for-private-jet.appspot.com")
