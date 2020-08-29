@@ -10,8 +10,17 @@ import UIKit
 import FirebaseStorage
 import FirebaseFirestore
 
-class InputAddRateViewController: UIViewController {
-
+class InputAddRateViewController: UIViewController{
+    
+    @IBOutlet weak var restaurantTextField: UITextField!
+    @IBOutlet weak var firstICAOTextField: UITextField!
+    @IBOutlet weak var secondICAOTextField: UITextField!
+    @IBOutlet weak var thirdICAOTextField: UITextField!
+    @IBOutlet weak var telephoneNumberTextField: UITextField!
+    @IBOutlet weak var emailAdressTextField: UITextField!
+    @IBOutlet weak var restaurantAdressTextField: UITextField!
+    @IBOutlet weak var contactPersonTextField: UITextField!
+    
     var data:Dictionary<String,Any> = [:]
     var pngImageArray:[Data] = []
     var restaurantDocumentId = ""
@@ -23,6 +32,7 @@ class InputAddRateViewController: UIViewController {
      override func viewDidLoad() {
         super.viewDidLoad()
         self.imageViewSetup()
+        self.inputSetUp()
      }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
@@ -33,6 +43,13 @@ class InputAddRateViewController: UIViewController {
         let imageViewArray = [leftImageView,centerImageView,rightImageView]
         for imageview in imageViewArray {
             imageview?.isHidden = true
+        }
+    }
+    
+    private func inputSetUp(){
+        let textFieldArray:[UITextField] = [restaurantTextField,firstICAOTextField,secondICAOTextField,thirdICAOTextField,telephoneNumberTextField,emailAdressTextField,restaurantAdressTextField,contactPersonTextField]
+        for textField in textFieldArray {
+            textField.delegate = self
         }
     }
 
@@ -52,6 +69,12 @@ class InputAddRateViewController: UIViewController {
             self.restaurantDocumentId = newRestaurantDocumentRef.documentID
             let newRestaurantData:[String:Any] = [
                 "restaurant_id": newRestaurantDocumentRef.documentID,
+                "restaurant_name": self.restaurantTextField.text!,
+                "ICAOCodeArray": [self.firstICAOTextField.text!,self.secondICAOTextField.text!,self.thirdICAOTextField.text!],
+                "telephone_number": self.telephoneNumberTextField.text!,
+                "email_adress": self.emailAdressTextField.text!,
+                "adress": self.restaurantAdressTextField.text!,
+                "contact_person": self.contactPersonTextField.text!,
                 "created_at": Date()
             ]
             self.saveToFirestore(ref: newRestaurantDocumentRef, data: newRestaurantData)
@@ -63,6 +86,13 @@ class InputAddRateViewController: UIViewController {
         }
     }
     
+}
+
+extension InputAddRateViewController:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
+      self.view.endEditing(true)
+      return true
+    }
 }
 
 
