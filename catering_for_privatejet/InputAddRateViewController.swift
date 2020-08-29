@@ -68,7 +68,7 @@ class InputAddRateViewController: UIViewController{
     }
 
      @objc func setData(notification: NSNotification?) {
-//        let data = notification?.userInfo!["restaurant_name"]
+        let data = notification?.userInfo!["restaurant_name"]
         print("notification?.userInfo")
         print("\(notification?.userInfo)")
      }
@@ -78,6 +78,13 @@ class InputAddRateViewController: UIViewController{
             //２回め以降の場合
             self.restaurantDocumentId = restaurantDocumentId as! String
             //self.updateToFirestore(ref: newRestaurantDocumentRef, data: newRestaurantData)
+            let updateRestaurantDocRef = Firestore.firestore().collection("restaurants").document(self.restaurantDocumentId)
+            let updateData:[String:Any] = [
+                "review_amount":FieldValue.increment(Int64(1)),
+                "total_rating_score_amount": self.cosmosViewRateValue,
+                "comment": FieldValue.arrayUnion([self.commentTextView.text])
+            ]
+            self.updateFirestoreData(ref: updateRestaurantDocRef, data:updateData)
         }else{
             let newRestaurantDocumentRef = Firestore.firestore().collection("restaurants").document()
             self.restaurantDocumentId = newRestaurantDocumentRef.documentID
@@ -92,17 +99,25 @@ class InputAddRateViewController: UIViewController{
                 "delivery_to_the_airport":self.segmentIndexConvertToString[self.isDeliveryToAirportSwitch.selectedSegmentIndex]!,
                 "speak_english": self.segmentIndexConvertToString[self.canSpeakEnglishSwitch.selectedSegmentIndex]!,
                 "halal_available": self.segmentIndexConvertToString[self.halalAvailableSwitch.selectedSegmentIndex]!,
-                "rating": self.cosmosViewRateValue,
-                "other_tips": self.otherTipsTextView.text,
-                "comment": self.commentTextView.text,
+                "total_rating_score_amount": self.cosmosViewRateValue,
+                "review_amount": 1,
+                "comment": [self.commentTextView.text],
+                "image_path": "",
                 "created_at": Date()
             ]
             self.saveToFirestore(ref: newRestaurantDocumentRef, data: newRestaurantData)
         }
+        //reviewデータの保存
+        let newReviewRef = Firestore.firestore().collection("restaurants").document(self.restaurantDocumentId).collection("reviews").document()
+        let newReviewData:[String:Any] = [
+            "comment": self.commentTextView.text,
+            "other_tips": self.otherTipsTextView.text,
+        ]
+        self.saveToFirestore(ref: newReviewRef, data: newReviewData)
         //restaurantに
         for pngImage in pngImageArray {
             self.saveToFireStorage(data: pngImage)
-            //ひもづいてfirestoreにも保存している（image＿urlを）
+            //ひもづいてfirestoreにも保存している（image＿urlを) restaurants/restaurantA/images / image_url
         }
     }
     
@@ -160,8 +175,7 @@ extension InputAddRateViewController: UIImagePickerControllerDelegate {
     private func saveImagePathToFirestore(path:String){
         // submit -------------------------------------------------------------------------------------
         let db = Firestore.firestore()
-        var ref: DocumentReference? = nil
-        ref = db.collection("restaurants").document(self.restaurantDocumentId).collection("images").document()
+        let ref: DocumentReference? = db.collection("restaurants").document(self.restaurantDocumentId).collection("images").document()
         let document_id = ref?.documentID as! String
         let submit_data = [
             "id": document_id,
@@ -169,6 +183,9 @@ extension InputAddRateViewController: UIImagePickerControllerDelegate {
             "created_at": Date(),
         ] as [String : Any]
         self.saveToFirestore(ref: ref, data: submit_data)
+        //検索結果を表示するときに、読み込み節約のため、restaurantドキュメントにあらかじめ最新の画像情報を持たせておく
+        let updateRestaurantDocRef = db.collection("restaurants").document(self.restaurantDocumentId)
+        self.updateFirestoreData(ref: updateRestaurantDocRef, data: ["image_path":path])
     }
     
     private func saveToFirestore(ref:DocumentReference?,data:[String:Any]){
@@ -180,5 +197,16 @@ extension InputAddRateViewController: UIImagePickerControllerDelegate {
             }
         }
     }
+    
+    private func updateFirestoreData(ref:DocumentReference?,data:[String:Any]){
+        ref?.setData(data, merge: true){ err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    
     
 }
