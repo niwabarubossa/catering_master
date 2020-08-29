@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseStorage
 import FirebaseFirestore
+import Cosmos
 
 class InputAddRateViewController: UIViewController{
     
@@ -20,6 +21,8 @@ class InputAddRateViewController: UIViewController{
     @IBOutlet weak var emailAdressTextField: UITextField!
     @IBOutlet weak var restaurantAdressTextField: UITextField!
     @IBOutlet weak var contactPersonTextField: UITextField!
+    
+    @IBOutlet weak var cosmosView: CosmosView!
     
     var data:Dictionary<String,Any> = [:]
     var pngImageArray:[Data] = []
@@ -50,6 +53,12 @@ class InputAddRateViewController: UIViewController{
         let textFieldArray:[UITextField] = [restaurantTextField,firstICAOTextField,secondICAOTextField,thirdICAOTextField,telephoneNumberTextField,emailAdressTextField,restaurantAdressTextField,contactPersonTextField]
         for textField in textFieldArray {
             textField.delegate = self
+        }
+        self.cosmosView.settings.fillMode = .half
+        cosmosView.didFinishTouchingCosmos = { rating in
+            print("rating")
+            print("\(rating)")
+            // ratingでレートの値（Double）が受け取れる
         }
     }
 

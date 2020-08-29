@@ -792,6 +792,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                     <connections>
                         <outlet property="centerImageView" destination="x2A-kN-lVE" id="dWr-Tb-QBH"/>
                         <outlet property="contactPersonTextField" destination="tf9-TX-PTt" id="cGP-Yf-WFq"/>
+                        <outlet property="cosmosView" destination="gaq-iE-DCw" id="49r-31-2fj"/>
                         <outlet property="emailAdressTextField" destination="ckO-ls-iaY" id="9MX-MJ-KaF"/>
                         <outlet property="firstICAOTextField" destination="wb7-xu-o9m" id="wst-jo-uTs"/>
                         <outlet property="leftImageView" destination="mrL-zY-kuj" id="YmN-oy-VsL"/>
