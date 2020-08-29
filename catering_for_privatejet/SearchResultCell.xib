@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,28 +16,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="390" height="181"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-pb-ZxM">
-                        <rect key="frame" x="237" y="106" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-pb-ZxM">
+                        <rect key="frame" x="180" y="81.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAt-Wc-SY4">
-                        <rect key="frame" x="20" y="26" width="119" height="125"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nAt-Wc-SY4">
+                        <rect key="frame" x="10" y="10" width="150" height="161"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="njV-3F-43T"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RestaurantName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pi-T1-neX">
-                        <rect key="frame" x="237" y="55" width="128" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RestaurantName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pi-T1-neX">
+                        <rect key="frame" x="180" y="31" width="200" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZP-fy-bQd">
+                        <rect key="frame" x="180" y="122.5" width="200" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="LTJ-pb-ZxM" firstAttribute="top" secondItem="9Pi-T1-neX" secondAttribute="bottom" constant="30" id="0tT-Hs-rqJ"/>
+                    <constraint firstItem="NZP-fy-bQd" firstAttribute="trailing" secondItem="9Pi-T1-neX" secondAttribute="trailing" id="1fe-Ea-QpC"/>
+                    <constraint firstItem="9Pi-T1-neX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="6tD-T8-kZd"/>
+                    <constraint firstItem="nAt-Wc-SY4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CVC-Lv-0K8"/>
+                    <constraint firstAttribute="bottom" secondItem="nAt-Wc-SY4" secondAttribute="bottom" constant="10" id="FJn-Qt-aYD"/>
+                    <constraint firstItem="LTJ-pb-ZxM" firstAttribute="leading" secondItem="9Pi-T1-neX" secondAttribute="leading" id="Gsw-6d-vwf"/>
+                    <constraint firstItem="nAt-Wc-SY4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Lai-SL-zw2"/>
+                    <constraint firstItem="9Pi-T1-neX" firstAttribute="leading" secondItem="nAt-Wc-SY4" secondAttribute="trailing" constant="20" id="UCh-9p-5U0"/>
+                    <constraint firstItem="NZP-fy-bQd" firstAttribute="leading" secondItem="9Pi-T1-neX" secondAttribute="leading" id="gKx-6P-VLu"/>
+                    <constraint firstItem="NZP-fy-bQd" firstAttribute="top" secondItem="LTJ-pb-ZxM" secondAttribute="bottom" constant="20" id="ifR-JC-zVQ"/>
+                    <constraint firstItem="nAt-Wc-SY4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="kye-yP-PVA"/>
+                    <constraint firstAttribute="trailing" secondItem="9Pi-T1-neX" secondAttribute="trailing" constant="10" id="y8A-Vs-r5s"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="ICAOCodeLabel" destination="NZP-fy-bQd" id="8qV-ca-6gD"/>
                 <outlet property="adressLabel" destination="LTJ-pb-ZxM" id="5hp-L3-XyA"/>
                 <outlet property="restaurantImageView" destination="nAt-Wc-SY4" id="gvR-vW-LGM"/>
                 <outlet property="restaurantNameLabel" destination="9Pi-T1-neX" id="Dzy-cr-u4w"/>
