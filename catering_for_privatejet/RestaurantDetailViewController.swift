@@ -8,6 +8,8 @@
 
 import UIKit
 import Cosmos
+import FirebaseFirestore
+import FirebaseStorage
 
 class RestaurantDetailViewController: UIViewController {
 
@@ -23,16 +25,23 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet weak var halalAvailableLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
+    @IBOutlet weak var letImageView: UIImageView!
+    @IBOutlet weak var centerImageView: UIImageView!
+    @IBOutlet weak var rightImageView: UIImageView!
+    
+    
     
     var data:Dictionary<String,Any> = [:]{
         didSet{
             self.setInputValue(data: data)
+            self.getLatestImagePath()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(setData(notification:)), name: .notifyTempDataToRestaurantDetail, object: nil)
+        self.setUpImageView()
     }
     
     @objc func setData(notification: NSNotification?) {
@@ -65,4 +74,46 @@ class RestaurantDetailViewController: UIViewController {
         
     }
     
+    private func getLatestImagePath(){
+        let restaurantDocumentId:String = data["restaurant_id"] as? String ?? "data"
+        let db = Firestore.firestore()
+        db.collection("restaurants").document(restaurantDocumentId).collection("images").order(by: "created_at", descending: true).limit(to: 3).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.getStorageImage(img_storage_path:document.data()["path"] as? String ?? "")
+                }
+            }
+        }
+    }
+    
+    private func getStorageImage(img_storage_path:String){
+        let storage = Storage.storage()
+        let storageRef = storage.reference(forURL: "gs://catering-for-private-jet.appspot.com")
+        let islandRef = storageRef.child("image/" + img_storage_path)
+        islandRef.getData(maxSize: 30 * 1024 * 1024) { data, error in
+          if let error = error {
+            print("\(error)")
+          } else {
+            let image = UIImage(data: data!)
+            self.setImageToImageView(image: image!)
+          }
+        }
+    }
+    
+    private func setUpImageView(){
+        for imageview in [letImageView,centerImageView,rightImageView] {
+            imageview?.isHidden = true
+        }
+    }
+    
+    private func setImageToImageView(image:UIImage){
+        for imageview in [letImageView,centerImageView,rightImageView] {
+            if imageview?.isHidden == true{
+                imageview?.isHidden = false
+                imageview?.image = image
+            }
+        }
+    }
 }
