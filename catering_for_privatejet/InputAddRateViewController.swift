@@ -33,7 +33,6 @@ class InputAddRateViewController: UIViewController{
     
     var data:Dictionary<String,Any> = [:]{
         didSet{
-            print("\(data)")
             self.setInputValue(data: data)
         }
     }
@@ -87,9 +86,6 @@ class InputAddRateViewController: UIViewController{
     }
 
      @objc func setData(notification: NSNotification?) {
-        let data = notification?.userInfo!["restaurant_name"]
-        print("notification?.userInfo")
-        print("\(notification?.userInfo)")
         self.data = notification?.userInfo! as! Dictionary<String, Any>
      }
     
