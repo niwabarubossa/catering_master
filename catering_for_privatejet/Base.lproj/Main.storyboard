@@ -790,12 +790,17 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                         <viewLayoutGuide key="safeArea" id="mzB-Gv-ock"/>
                     </view>
                     <connections>
+                        <outlet property="canSpeakEnglishSwitch" destination="gmW-N1-fEf" id="WXd-ud-KYc"/>
                         <outlet property="centerImageView" destination="x2A-kN-lVE" id="dWr-Tb-QBH"/>
+                        <outlet property="commentTextView" destination="HhB-zr-248" id="Qw7-iq-6Ie"/>
                         <outlet property="contactPersonTextField" destination="tf9-TX-PTt" id="cGP-Yf-WFq"/>
                         <outlet property="cosmosView" destination="gaq-iE-DCw" id="49r-31-2fj"/>
                         <outlet property="emailAdressTextField" destination="ckO-ls-iaY" id="9MX-MJ-KaF"/>
                         <outlet property="firstICAOTextField" destination="wb7-xu-o9m" id="wst-jo-uTs"/>
+                        <outlet property="halalAvailableSwitch" destination="6U1-Xw-hFR" id="Nm2-Q9-xm9"/>
+                        <outlet property="isDeliveryToAirportSwitch" destination="4y2-fh-Ggr" id="r7N-oz-JVj"/>
                         <outlet property="leftImageView" destination="mrL-zY-kuj" id="YmN-oy-VsL"/>
+                        <outlet property="otherTipsTextView" destination="X9n-ao-rbW" id="e8k-WO-pNW"/>
                         <outlet property="restaurantAdressTextField" destination="FBf-Dj-ESk" id="Sz4-QN-KUY"/>
                         <outlet property="restaurantTextField" destination="b2p-aH-fyA" id="EMB-MK-S89"/>
                         <outlet property="rightImageView" destination="B0A-La-Dnc" id="EgJ-6R-Srn"/>

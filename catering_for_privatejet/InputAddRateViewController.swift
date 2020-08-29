@@ -21,8 +21,15 @@ class InputAddRateViewController: UIViewController{
     @IBOutlet weak var emailAdressTextField: UITextField!
     @IBOutlet weak var restaurantAdressTextField: UITextField!
     @IBOutlet weak var contactPersonTextField: UITextField!
+    @IBOutlet weak var isDeliveryToAirportSwitch: UISegmentedControl!
+    @IBOutlet weak var canSpeakEnglishSwitch: UISegmentedControl!
+    @IBOutlet weak var halalAvailableSwitch: UISegmentedControl!
+    let segmentIndexConvertToString:Dictionary<Int,String> = [0:"yes",1:"no"]
+    @IBOutlet weak var otherTipsTextView: UITextView!
+    @IBOutlet weak var commentTextView: UITextView!
     
     @IBOutlet weak var cosmosView: CosmosView!
+    var cosmosViewRateValue:Double = 0.0
     
     var data:Dictionary<String,Any> = [:]
     var pngImageArray:[Data] = []
@@ -56,9 +63,7 @@ class InputAddRateViewController: UIViewController{
         }
         self.cosmosView.settings.fillMode = .half
         cosmosView.didFinishTouchingCosmos = { rating in
-            print("rating")
-            print("\(rating)")
-            // ratingでレートの値（Double）が受け取れる
+            self.cosmosViewRateValue = rating
         }
     }
 
@@ -84,6 +89,12 @@ class InputAddRateViewController: UIViewController{
                 "email_adress": self.emailAdressTextField.text!,
                 "adress": self.restaurantAdressTextField.text!,
                 "contact_person": self.contactPersonTextField.text!,
+                "delivery_to_the_airport":self.segmentIndexConvertToString[self.isDeliveryToAirportSwitch.selectedSegmentIndex]!,
+                "speak_english": self.segmentIndexConvertToString[self.canSpeakEnglishSwitch.selectedSegmentIndex]!,
+                "halal_available": self.segmentIndexConvertToString[self.halalAvailableSwitch.selectedSegmentIndex]!,
+                "rating": self.cosmosViewRateValue,
+                "other_tips": self.otherTipsTextView.text,
+                "comment": self.commentTextView.text,
                 "created_at": Date()
             ]
             self.saveToFirestore(ref: newRestaurantDocumentRef, data: newRestaurantData)
