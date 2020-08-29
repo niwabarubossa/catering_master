@@ -35,7 +35,7 @@ extension SearchResultCell{
     private func getStorageImage(img_storage_path:String){
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://catering-for-private-jet.appspot.com")
-        let islandRef = storageRef.child(img_storage_path)
+        let islandRef = storageRef.child("image/" + img_storage_path)
         islandRef.getData(maxSize: 30 * 1024 * 1024) { data, error in
           if let error = error {
             print("\(error)")
