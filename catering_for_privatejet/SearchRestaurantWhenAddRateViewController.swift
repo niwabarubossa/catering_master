@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 class SearchRestaurantWhenAddRateViewController: UIViewController {
 
+    @IBOutlet weak var searchTextField: UITextField!
+    
     @IBOutlet weak var tableView: UITableView!
     private var sendIndexPath:IndexPath = IndexPath(row: 0, section: 0)
     var dataSource:[Dictionary<String,Any>] = []
@@ -23,7 +25,7 @@ class SearchRestaurantWhenAddRateViewController: UIViewController {
     @IBAction func searchButtonTapped(_ sender: Any) {
         self.dataSource = []
         let db = Firestore.firestore()
-        db.collection("restaurants").whereField("restaurant_name", isEqualTo: "restaurant_A").getDocuments() { (querySnapshot, err) in
+        db.collection("restaurants").whereField("ICAOCodeArray", arrayContains: self.searchTextField.text!).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {

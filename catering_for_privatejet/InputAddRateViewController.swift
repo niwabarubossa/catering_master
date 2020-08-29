@@ -31,7 +31,11 @@ class InputAddRateViewController: UIViewController{
     @IBOutlet weak var cosmosView: CosmosView!
     var cosmosViewRateValue:Double = 0.0
     
-    var data:Dictionary<String,Any> = [:]
+    var data:Dictionary<String,Any> = [:]{
+        didSet{
+            self.setInputValue(data: data)
+        }
+    }
     var pngImageArray:[Data] = []
     var restaurantDocumentId = ""
     @IBOutlet weak var leftImageView: UIImageView!
@@ -43,10 +47,24 @@ class InputAddRateViewController: UIViewController{
         super.viewDidLoad()
         self.imageViewSetup()
         self.inputSetUp()
+        NotificationCenter.default.addObserver(self, selector: #selector(setData(notification:)), name: .notifyTempDataToAddRatePage, object: nil)
      }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
         self.pickImageFromLibrary()
+    }
+    
+    private func setInputValue(data:Dictionary<String,Any>){
+        self.restaurantTextField.text = data["restaurant_name"] as? String
+        if let ICAOArray:[String] = data["ICAOCodeArray"] as? [String]{
+            self.firstICAOTextField.text = ICAOArray[0]
+            self.secondICAOTextField.text = ICAOArray[1]
+            self.thirdICAOTextField.text = ICAOArray[2]
+        }
+        self.telephoneNumberTextField.text = data["telephone_number"] as? String
+        self.emailAdressTextField.text = data["email_adress"] as? String
+        self.restaurantAdressTextField.text = data["adress"] as? String
+        self.contactPersonTextField.text = data["contact_person"] as? String
     }
     
     private func imageViewSetup(){
@@ -68,9 +86,7 @@ class InputAddRateViewController: UIViewController{
     }
 
      @objc func setData(notification: NSNotification?) {
-        let data = notification?.userInfo!["restaurant_name"]
-        print("notification?.userInfo")
-        print("\(notification?.userInfo)")
+        self.data = notification?.userInfo! as! Dictionary<String, Any>
      }
     
     @IBAction func submitRate(_ sender: Any) {
@@ -164,7 +180,7 @@ extension InputAddRateViewController: UIImagePickerControllerDelegate {
     private func saveToFireStorage(data: Data){
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://catering-for-private-jet.appspot.com")
-        let reference = storageRef.child("image/" + String(Int.random(in: 1 ... 100000)) + ".jpg")
+        let reference = storageRef.child("image/" + String(Int.random(in: 1 ... 1000000)) + ".jpg")
         reference.putData(data, metadata: nil, completion: { metaData, error in
             if let path = metaData?.name{
                 self.saveImagePathToFirestore(path: path)
