@@ -59,8 +59,8 @@ class RestaurantDetailViewController: UIViewController {
             self.commentsLabel.text = displayComment
         }
         self.ratingView.settings.fillMode = .precise
-
-        let ratingScore = (data["total_rating_score_amount"] as? Int ?? 0 ) / (data["review_amount"] as? Int ?? 1)
+        var ratingScore = (data["total_rating_score_amount"] as? Int ?? 0 ) / (data["review_amount"] as? Int ?? 1)
+        if ratingScore == 0 { ratingScore = 5 }
         self.ratingView.settings.totalStars = ratingScore
         
     }
