@@ -34,6 +34,7 @@ class InputAddRateViewController: UIViewController{
     var data:Dictionary<String,Any> = [:]{
         didSet{
             print("\(data)")
+            self.setInputValue(data: data)
         }
     }
     var pngImageArray:[Data] = []
@@ -52,6 +53,19 @@ class InputAddRateViewController: UIViewController{
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
         self.pickImageFromLibrary()
+    }
+    
+    private func setInputValue(data:Dictionary<String,Any>){
+        self.restaurantTextField.text = data["restaurant_name"] as? String
+        if let ICAOArray:[String] = data["ICAOCodeArray"] as? [String]{
+            self.firstICAOTextField.text = ICAOArray[0]
+            self.secondICAOTextField.text = ICAOArray[1]
+            self.thirdICAOTextField.text = ICAOArray[2]
+        }
+        self.telephoneNumberTextField.text = data["telephone_number"] as? String
+        self.emailAdressTextField.text = data["email_adress"] as? String
+        self.restaurantAdressTextField.text = data["adress"] as? String
+        self.contactPersonTextField.text = data["contact_person"] as? String
     }
     
     private func imageViewSetup(){
