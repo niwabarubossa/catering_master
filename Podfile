@@ -5,6 +5,7 @@ target 'catering_for_privatejet' do
    pod 'Firebase'
    pod 'Firebase/Storage'
    pod 'Firebase/Firestore'
+   pod 'Cosmos'
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
