@@ -31,7 +31,11 @@ class InputAddRateViewController: UIViewController{
     @IBOutlet weak var cosmosView: CosmosView!
     var cosmosViewRateValue:Double = 0.0
     
-    var data:Dictionary<String,Any> = [:]
+    var data:Dictionary<String,Any> = [:]{
+        didSet{
+            print("\(data)")
+        }
+    }
     var pngImageArray:[Data] = []
     var restaurantDocumentId = ""
     @IBOutlet weak var leftImageView: UIImageView!
@@ -43,6 +47,7 @@ class InputAddRateViewController: UIViewController{
         super.viewDidLoad()
         self.imageViewSetup()
         self.inputSetUp()
+        NotificationCenter.default.addObserver(self, selector: #selector(setData(notification:)), name: .notifyTempDataToAddRatePage, object: nil)
      }
     
     @IBAction func cameraButtonTapped(_ sender: Any) {
@@ -71,6 +76,7 @@ class InputAddRateViewController: UIViewController{
         let data = notification?.userInfo!["restaurant_name"]
         print("notification?.userInfo")
         print("\(notification?.userInfo)")
+        self.data = notification?.userInfo! as! Dictionary<String, Any>
      }
     
     @IBAction func submitRate(_ sender: Any) {
