@@ -39,6 +39,7 @@ extension SearchResultViewController: UITableViewDataSource,UITableViewDelegate 
             cell.img_storage_path = img_url_array[0]
         }
         cell.img_storage_path = self.dataSource[indexPath.row]["image_path"] as? String ?? ""
+        cell.firestoreData = self.dataSource[indexPath.row]
         return cell
     }
     
