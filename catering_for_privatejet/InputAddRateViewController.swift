@@ -180,7 +180,7 @@ extension InputAddRateViewController: UIImagePickerControllerDelegate {
     private func saveToFireStorage(data: Data){
         let storage = Storage.storage()
         let storageRef = storage.reference(forURL: "gs://catering-for-private-jet.appspot.com")
-        let reference = storageRef.child("image/" + String(Int.random(in: 1 ... 100000)) + ".jpg")
+        let reference = storageRef.child("image/" + String(Int.random(in: 1 ... 1000000)) + ".jpg")
         reference.putData(data, metadata: nil, completion: { metaData, error in
             if let path = metaData?.name{
                 self.saveImagePathToFirestore(path: path)
