@@ -1070,12 +1070,6 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNJ-vh-oY8">
-                                <rect key="frame" x="30" y="484" width="354" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5L-dE-8PP" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="30" y="510" width="354" height="20"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1125,12 +1119,6 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9O-MH-f5e">
-                                <rect key="frame" x="30" y="440" width="354" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do they speak English?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gI-PL-zXF">
                                 <rect key="frame" x="30" y="576" width="354" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -1173,6 +1161,22 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                     <constraint firstAttribute="height" constant="100" id="DcI-b1-zrw"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="adress" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tUD-CJ-WQw">
+                                <rect key="frame" x="30" y="440" width="354" height="24"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="DYU-XK-rXK"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNJ-vh-oY8">
+                                <rect key="frame" x="30" y="484" width="354" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1200,6 +1204,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                             <constraint firstItem="yxr-YT-31y" firstAttribute="leading" secondItem="GqO-kM-Mvd" secondAttribute="leading" id="Iiu-Ch-2Fk"/>
                             <constraint firstItem="P3D-Tr-NWI" firstAttribute="leading" secondItem="GqO-kM-Mvd" secondAttribute="leading" id="JJI-lI-8Ij"/>
                             <constraint firstItem="3gI-PL-zXF" firstAttribute="top" secondItem="8kA-ak-GV3" secondAttribute="bottom" constant="10" id="JbW-k0-v9u"/>
+                            <constraint firstItem="tUD-CJ-WQw" firstAttribute="leading" secondItem="7ZA-8l-Nds" secondAttribute="leading" id="Jg1-na-2vj"/>
                             <constraint firstItem="5xW-3S-BPi" firstAttribute="leading" secondItem="U1d-C3-3c5" secondAttribute="leadingMargin" constant="10" id="NGE-ei-gAR"/>
                             <constraint firstItem="J7X-0Q-b3T" firstAttribute="trailing" secondItem="GqO-kM-Mvd" secondAttribute="trailing" id="NtB-97-nOU"/>
                             <constraint firstItem="QIS-Vu-mVu" firstAttribute="trailing" secondItem="GqO-kM-Mvd" secondAttribute="trailing" id="OFw-dG-PlH"/>
@@ -1213,7 +1218,6 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                             <constraint firstItem="Y6s-Pr-W9K" firstAttribute="leading" secondItem="GqO-kM-Mvd" secondAttribute="leading" id="UYy-3P-kve"/>
                             <constraint firstItem="GqO-kM-Mvd" firstAttribute="leading" secondItem="IdT-Hj-NaT" secondAttribute="leading" id="UfK-JE-y3V"/>
                             <constraint firstItem="mBR-HV-2mg" firstAttribute="top" secondItem="IR3-xu-41U" secondAttribute="bottom" constant="20" id="Vfr-op-arJ"/>
-                            <constraint firstItem="J9O-MH-f5e" firstAttribute="top" secondItem="7ZA-8l-Nds" secondAttribute="bottom" constant="10" id="Wdj-FD-c3g"/>
                             <constraint firstItem="3gI-PL-zXF" firstAttribute="leading" secondItem="GqO-kM-Mvd" secondAttribute="leading" id="Wo9-ph-D8C"/>
                             <constraint firstItem="Y6s-Pr-W9K" firstAttribute="trailing" secondItem="GqO-kM-Mvd" secondAttribute="trailing" id="Xkc-Qa-lXU"/>
                             <constraint firstItem="Dod-kr-taq" firstAttribute="leading" secondItem="QIS-Vu-mVu" secondAttribute="leading" id="Xlg-t7-eUP"/>
@@ -1223,7 +1227,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                             <constraint firstAttribute="trailingMargin" secondItem="82J-ZB-Q9Q" secondAttribute="trailing" constant="10" id="aPb-iI-upM"/>
                             <constraint firstItem="5xW-3S-BPi" firstAttribute="top" secondItem="zSE-1u-8Cm" secondAttribute="bottom" constant="10" id="bEa-sB-eqD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IdT-Hj-NaT" secondAttribute="trailing" constant="10" id="cw6-NH-CAI"/>
-                            <constraint firstItem="eNJ-vh-oY8" firstAttribute="top" secondItem="J9O-MH-f5e" secondAttribute="bottom" constant="20" id="f7F-Ey-S5o"/>
+                            <constraint firstItem="tUD-CJ-WQw" firstAttribute="top" secondItem="7ZA-8l-Nds" secondAttribute="bottom" constant="10" id="eye-fe-JCz"/>
                             <constraint firstItem="g6X-HR-keQ" firstAttribute="leading" secondItem="4qf-St-2fd" secondAttribute="trailing" constant="10" id="fB7-5g-ONi"/>
                             <constraint firstItem="eNJ-vh-oY8" firstAttribute="trailing" secondItem="GqO-kM-Mvd" secondAttribute="trailing" id="fGJ-wN-skm"/>
                             <constraint firstItem="d4H-wA-jtP" firstAttribute="top" secondItem="yxr-YT-31y" secondAttribute="bottom" constant="10" id="fri-rD-db8"/>
@@ -1233,6 +1237,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                             <constraint firstItem="zSE-1u-8Cm" firstAttribute="top" secondItem="82J-ZB-Q9Q" secondAttribute="bottom" constant="20" id="gwD-Nx-90J"/>
                             <constraint firstItem="P3D-Tr-NWI" firstAttribute="top" secondItem="uND-9E-xbZ" secondAttribute="bottom" constant="20" id="h35-TP-841"/>
                             <constraint firstItem="GqO-kM-Mvd" firstAttribute="trailing" secondItem="IdT-Hj-NaT" secondAttribute="trailing" id="h9Y-14-2UK"/>
+                            <constraint firstItem="tUD-CJ-WQw" firstAttribute="trailing" secondItem="7ZA-8l-Nds" secondAttribute="trailing" id="iEe-p6-hTw"/>
                             <constraint firstItem="SxE-gY-vFZ" firstAttribute="trailing" secondItem="GqO-kM-Mvd" secondAttribute="trailing" id="ihF-ov-Gf8"/>
                             <constraint firstItem="QIS-Vu-mVu" firstAttribute="leading" secondItem="GqO-kM-Mvd" secondAttribute="leading" id="jOu-1l-yPa"/>
                             <constraint firstItem="mBR-HV-2mg" firstAttribute="trailing" secondItem="GqO-kM-Mvd" secondAttribute="trailing" id="lyd-wv-Lu6"/>
@@ -1245,15 +1250,14 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                             <constraint firstItem="7ZA-8l-Nds" firstAttribute="leading" secondItem="GqO-kM-Mvd" secondAttribute="leading" id="rzP-1j-203"/>
                             <constraint firstItem="uND-9E-xbZ" firstAttribute="top" secondItem="GqO-kM-Mvd" secondAttribute="bottom" constant="10" id="sQ2-O3-Koh"/>
                             <constraint firstItem="EE9-Ns-Ihl" firstAttribute="leading" secondItem="U1d-C3-3c5" secondAttribute="leadingMargin" constant="10" id="sRI-Bp-Ig5"/>
-                            <constraint firstItem="J9O-MH-f5e" firstAttribute="trailing" secondItem="GqO-kM-Mvd" secondAttribute="trailing" id="tQv-Di-PCa"/>
                             <constraint firstItem="4qf-St-2fd" firstAttribute="width" secondItem="Dod-kr-taq" secondAttribute="width" id="uLQ-LH-Zd6"/>
                             <constraint firstItem="d4H-wA-jtP" firstAttribute="leading" secondItem="GqO-kM-Mvd" secondAttribute="leading" id="ujf-Ar-nun"/>
                             <constraint firstItem="IR3-xu-41U" firstAttribute="leading" secondItem="GqO-kM-Mvd" secondAttribute="leading" id="ujp-XR-a0L"/>
-                            <constraint firstItem="J9O-MH-f5e" firstAttribute="leading" secondItem="GqO-kM-Mvd" secondAttribute="leading" id="wEL-jZ-O5w"/>
                             <constraint firstItem="yxr-YT-31y" firstAttribute="top" secondItem="3gI-PL-zXF" secondAttribute="bottom" constant="20" id="wVL-3p-zBt"/>
                             <constraint firstItem="g6X-HR-keQ" firstAttribute="trailing" secondItem="QIS-Vu-mVu" secondAttribute="trailing" id="xYf-iC-N55"/>
                             <constraint firstItem="SxE-gY-vFZ" firstAttribute="top" secondItem="d4H-wA-jtP" secondAttribute="bottom" constant="20" id="xad-5b-qPg"/>
                             <constraint firstItem="q5L-dE-8PP" firstAttribute="trailing" secondItem="GqO-kM-Mvd" secondAttribute="trailing" id="xii-JG-O6G"/>
+                            <constraint firstItem="eNJ-vh-oY8" firstAttribute="top" secondItem="tUD-CJ-WQw" secondAttribute="bottom" constant="20" id="yro-7y-l8w"/>
                             <constraint firstItem="IR3-xu-41U" firstAttribute="top" secondItem="SxE-gY-vFZ" secondAttribute="bottom" constant="10" id="ytz-hb-AlD"/>
                             <constraint firstItem="8kA-ak-GV3" firstAttribute="top" secondItem="q5L-dE-8PP" secondAttribute="bottom" constant="20" id="zBV-3v-Exo"/>
                         </constraints>
@@ -1261,7 +1265,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                     </view>
                     <connections>
                         <outlet property="ICAOCodeLabel" destination="RxA-6y-Ybx" id="kMh-WW-ClG"/>
-                        <outlet property="adressLabel" destination="J9O-MH-f5e" id="PEE-uI-QUf"/>
+                        <outlet property="adressTextView" destination="tUD-CJ-WQw" id="eLh-p3-pdc"/>
                         <outlet property="canDelivveryToTheAirportLabel" destination="d4H-wA-jtP" id="nA1-sZ-cmK"/>
                         <outlet property="canSpeakEnglishLabel" destination="3gI-PL-zXF" id="hPS-ud-Mb6"/>
                         <outlet property="centerImageView" destination="4qf-St-2fd" id="JHy-eG-Dsc"/>
