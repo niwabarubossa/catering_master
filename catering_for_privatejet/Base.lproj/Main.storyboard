@@ -276,7 +276,6 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
         <!--Search Or Add Rate View Controller-->
         <scene sceneID="h2P-yj-POT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s9F-ed-lnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="p99-7G-Yb1" customClass="SearchOrAddRateViewController" customModule="catering_for_privatejet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tKG-p2-zCK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -361,6 +360,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                         <segue destination="xpM-tw-Z6W" kind="show" identifier="goToSearchResultPage" id="7KF-7V-a79"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9F-ed-lnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1271" y="118"/>
         </scene>
@@ -843,7 +843,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4434.7826086956529" y="905.35714285714278"/>
+            <point key="canvasLocation" x="4867" y="978"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C24-ES-gTb">
