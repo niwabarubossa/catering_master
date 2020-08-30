@@ -10,6 +10,9 @@ import UIKit
 import FirebaseFirestore
 
 class SearchResultViewController: UIViewController {
+
+    var searchingICAOCode:String = ""
+    @IBOutlet weak var searchingICAOCodeLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     private var sendIndexPath:IndexPath = IndexPath(row: 0, section: 0)
@@ -20,6 +23,7 @@ class SearchResultViewController: UIViewController {
         super.viewDidLoad()
         self.tableViewSetup()
         self.getFirestoreData()
+        self.searchingICAOCodeLabel.text = searchingICAOCode
     }
 }
 
@@ -71,7 +75,7 @@ extension SearchResultViewController: UITableViewDataSource,UITableViewDelegate 
 extension SearchResultViewController{
     private func getFirestoreData(){
         let db = Firestore.firestore()
-        db.collection("restaurants").getDocuments() { (querySnapshot, err) in
+        db.collection("restaurants").whereField("ICAOCodeArray", arrayContains: self.searchingICAOCode).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
