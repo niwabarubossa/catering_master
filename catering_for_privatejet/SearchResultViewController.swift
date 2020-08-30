@@ -75,7 +75,7 @@ extension SearchResultViewController: UITableViewDataSource,UITableViewDelegate 
 extension SearchResultViewController{
     private func getFirestoreData(){
         let db = Firestore.firestore()
-        db.collection("restaurants").getDocuments() { (querySnapshot, err) in
+        db.collection("restaurants").whereField("ICAOCodeArray", arrayContains: self.searchingICAOCode).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
