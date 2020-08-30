@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseStorage
+import Cosmos
 
 class SearchResultCell: UITableViewCell {
 
@@ -15,8 +16,10 @@ class SearchResultCell: UITableViewCell {
     @IBOutlet weak var restaurantImageView: UIImageView!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var ICAOCodeLabel: UILabel!
+    @IBOutlet weak var cosmosView: CosmosView!
+    @IBOutlet weak var adressTextView: UITextView!
     
-    @IBOutlet weak var adressLabel: UILabel!
+//    @IBOutlet weak var adressLabel: UILabel!
     var img_storage_path: String = "" {
         didSet {
             self.getStorageImage(img_storage_path: img_storage_path)
@@ -39,9 +42,11 @@ class SearchResultCell: UITableViewCell {
     private func setDataToDisplay(data:Dictionary<String,Any>){
         self.restaurantNameLabel.text = data["restaurant_name"] as? String
         if let ICAOCodeArray:[String] = data["ICAOCodeArray"] as? [String] {
-            self.ICAOCodeLabel.text = ICAOCodeArray[0] + ICAOCodeArray[1] + ICAOCodeArray[2]
+            self.ICAOCodeLabel.text = ICAOCodeArray[0] + "  " + ICAOCodeArray[1] + " " + ICAOCodeArray[2]
         }
-        self.adressLabel.text = data["adress"] as? String
+//        self.adressLabel.text = data["adress"] as? String
+        self.createLinkToMap()
+        self.calculateRate()
     }
     
 }
@@ -59,6 +64,26 @@ extension SearchResultCell{
             self.restaurantImageView.image = image
           }
         }
+    }
+}
 
+extension SearchResultCell:UITextViewDelegate{
+    private func createLinkToMap(){
+        let baseString = firestoreData["adress"] as? String ?? ""
+        let attributedString = NSMutableAttributedString(string: baseString)
+        attributedString.addAttribute(.link,
+                                      value: baseString,
+                                      range: NSString(string: baseString).range(of: baseString))
+        adressTextView.attributedText = attributedString
+        adressTextView.isSelectable = true
+        adressTextView.isEditable = false
+        adressTextView.delegate = self
+    }
+    
+    private func calculateRate(){
+        self.cosmosView.settings.fillMode = .precise
+        var ratingScore = (firestoreData["total_rating_score_amount"] as? Int ?? 0 ) / (firestoreData["review_amount"] as? Int ?? 1)
+        if ratingScore == 0 { ratingScore = 5 }
+        self.cosmosView.settings.totalStars = ratingScore
     }
 }
