@@ -359,17 +359,18 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 <rect key="frame" x="20" y="188" width="374" height="654"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWe-OQ-OFb">
-                                <rect key="frame" x="186" y="131" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWe-OQ-OFb">
+                                <rect key="frame" x="178.5" y="120.5" width="57.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="MQw-9c-dtn" firstAttribute="top" secondItem="DWe-OQ-OFb" secondAttribute="bottom" constant="40" id="633-hT-NhH"/>
                             <constraint firstItem="MQw-9c-dtn" firstAttribute="top" secondItem="ssc-4T-G82" secondAttribute="top" constant="100" id="G6k-1g-pUW"/>
+                            <constraint firstItem="DWe-OQ-OFb" firstAttribute="centerX" secondItem="KIE-8c-2Nv" secondAttribute="centerX" id="LvI-S6-uO8"/>
                             <constraint firstItem="ssc-4T-G82" firstAttribute="trailing" secondItem="MQw-9c-dtn" secondAttribute="trailing" constant="20" id="Xv4-TF-iQj"/>
                             <constraint firstItem="ssc-4T-G82" firstAttribute="bottom" secondItem="MQw-9c-dtn" secondAttribute="bottom" constant="20" id="j31-ej-Fyy"/>
                             <constraint firstItem="MQw-9c-dtn" firstAttribute="leading" secondItem="ssc-4T-G82" secondAttribute="leading" constant="20" id="rlm-Ng-Awc"/>
@@ -385,7 +386,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcN-OV-1J7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2393" y="-251"/>
+            <point key="canvasLocation" x="2392.753623188406" y="-251.11607142857142"/>
         </scene>
         <!--When Search Restaurant Temp View Controller-->
         <scene sceneID="vf4-hG-3nV">
