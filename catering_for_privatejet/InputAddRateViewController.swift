@@ -151,6 +151,15 @@ extension InputAddRateViewController:UITextFieldDelegate{
       self.view.endEditing(true)
       return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = textField.text!
+        if textField.tag != 0 {
+            textField.text = String((text.prefix(4)))
+            if text.count > 4 { return false }
+        }
+        return true
+    }
 }
 
 
