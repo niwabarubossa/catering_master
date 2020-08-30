@@ -15,6 +15,7 @@ class SearchOrAddRateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.textFieldSetup()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,3 +48,13 @@ class SearchOrAddRateViewController: UIViewController {
     }
 
 }
+
+extension SearchOrAddRateViewController:UITextFieldDelegate{
+    private func textFieldSetup(){
+        self.ICAOTextField.delegate = self
+    }
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+ }

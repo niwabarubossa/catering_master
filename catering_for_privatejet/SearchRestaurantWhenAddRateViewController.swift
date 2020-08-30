@@ -20,6 +20,7 @@ class SearchRestaurantWhenAddRateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewSetup()
+        self.textFieldSetup()
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
@@ -77,3 +78,12 @@ extension SearchRestaurantWhenAddRateViewController: UITableViewDataSource,UITab
     
 }
 
+extension SearchRestaurantWhenAddRateViewController:UITextFieldDelegate{
+    private func textFieldSetup(){
+        self.searchTextField.delegate = self
+    }
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+ }
