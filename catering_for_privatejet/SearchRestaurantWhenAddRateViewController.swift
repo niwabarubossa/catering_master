@@ -12,18 +12,21 @@ import FirebaseFirestore
 class SearchRestaurantWhenAddRateViewController: UIViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
-    
+    @IBOutlet weak var noDataLabel: UIView!
     @IBOutlet weak var tableView: UITableView!
     private var sendIndexPath:IndexPath = IndexPath(row: 0, section: 0)
     var dataSource:[Dictionary<String,Any>] = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableViewSetup()
         self.textFieldSetup()
+        self.noDataLabelSetup()
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
+        self.view.endEditing(true)
         self.dataSource = []
         let db = Firestore.firestore()
         db.collection("restaurants").whereField("ICAOCodeArray", arrayContains: self.searchTextField.text!).getDocuments() { (querySnapshot, err) in
@@ -35,6 +38,7 @@ class SearchRestaurantWhenAddRateViewController: UIViewController {
                 }
                 self.tableView.reloadData()
                 self.tableView.isHidden = false
+                if querySnapshot!.documents.count == 0 { self.noDataDisplayMode() }
             }
         }
     }
@@ -47,7 +51,6 @@ extension SearchRestaurantWhenAddRateViewController: UITableViewDataSource,UITab
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "SearchRestaurantNameTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchRestaurantNameTableViewCell")
-        self.tableView.isHidden = true
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,9 +61,9 @@ extension SearchRestaurantWhenAddRateViewController: UITableViewDataSource,UITab
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dataSource.count
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -84,6 +87,22 @@ extension SearchRestaurantWhenAddRateViewController:UITextFieldDelegate{
     }
     func textFieldShouldReturn(_ textField:UITextField) -> Bool {
         self.view.endEditing(true)
+        self.searchButtonTapped(Any.self)
         return true
     }
  }
+
+
+extension SearchRestaurantWhenAddRateViewController{
+    private func noDataLabelSetup(){
+        self.noDataLabel.isHidden = true
+        self.tableView.isHidden = true
+    }
+    private func dataExistMode(){
+        self.noDataLabel.isHidden = true
+    }
+    private func noDataDisplayMode(){
+        self.noDataLabel.isHidden = false
+        self.tableView.isHidden = true
+    }
+}
