@@ -16,9 +16,7 @@ class ViewController: UIViewController {
     }
     
     @objc func doSomething(notification: NSNotification?) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
