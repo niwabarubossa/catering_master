@@ -101,6 +101,7 @@ class InputAddRateViewController: UIViewController{
                 "comment": FieldValue.arrayUnion([self.commentTextView.text])
             ]
             self.updateFirestoreData(ref: updateRestaurantDocRef, data:updateData)
+            self.navigationController?.popToRootViewController(animated: true)
         }else{
             let newRestaurantDocumentRef = Firestore.firestore().collection("restaurants").document()
             self.restaurantDocumentId = newRestaurantDocumentRef.documentID
@@ -122,6 +123,7 @@ class InputAddRateViewController: UIViewController{
                 "created_at": Date()
             ]
             self.saveToFirestore(ref: newRestaurantDocumentRef, data: newRestaurantData)
+            self.navigationController?.popToRootViewController(animated: true)
         }
         //reviewデータの保存
         let newReviewRef = Firestore.firestore().collection("restaurants").document(self.restaurantDocumentId).collection("reviews").document()
