@@ -110,7 +110,9 @@ class InputAddRateViewController: UIViewController{
                 "ICAOCodeArray": [self.firstICAOTextField.text!,self.secondICAOTextField.text!,self.thirdICAOTextField.text!],
                 "telephone_number": self.telephoneNumberTextField.text!,
                 "email_adress": self.emailAdressTextField.text!,
+                
                 "adress": self.restaurantAdressTextField.text!,
+                
                 "contact_person": self.contactPersonTextField.text!,
                 "delivery_to_the_airport":self.segmentIndexConvertToString[self.isDeliveryToAirportSwitch.selectedSegmentIndex]!,
                 "speak_english": self.segmentIndexConvertToString[self.canSpeakEnglishSwitch.selectedSegmentIndex]!,
