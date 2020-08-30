@@ -110,9 +110,7 @@ class InputAddRateViewController: UIViewController{
                 "ICAOCodeArray": [self.firstICAOTextField.text!,self.secondICAOTextField.text!,self.thirdICAOTextField.text!],
                 "telephone_number": self.telephoneNumberTextField.text!,
                 "email_adress": self.emailAdressTextField.text!,
-                
-                "adress": self.restaurantAdressTextField.text!,
-                
+                "adress": getGoogleLink(text: self.restaurantAdressTextField.text!),
                 "contact_person": self.contactPersonTextField.text!,
                 "delivery_to_the_airport":self.segmentIndexConvertToString[self.isDeliveryToAirportSwitch.selectedSegmentIndex]!,
                 "speak_english": self.segmentIndexConvertToString[self.canSpeakEnglishSwitch.selectedSegmentIndex]!,
@@ -137,6 +135,11 @@ class InputAddRateViewController: UIViewController{
             self.saveToFireStorage(data: pngImage)
             //ひもづいてfirestoreにも保存している（image＿urlを) restaurants/restaurantA/images / image_url
         }
+    }
+    
+    private func getGoogleLink(text:String) -> String{
+        let splitByLineArray = text.components(separatedBy: .whitespaces)
+        return splitByLineArray[splitByLineArray.count - 1]
     }
     
 }
