@@ -14,6 +14,7 @@
 		2B09A0AC24F687470035AC66 /* InputAddRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B09A0AB24F687470035AC66 /* InputAddRateViewController.swift */; };
 		2B27D10D24F3C7BA003E60D2 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B27D10C24F3C7BA003E60D2 /* RestaurantDetailViewController.swift */; };
 		2B27D10F24F3CC4F003E60D2 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B27D10E24F3CC4F003E60D2 /* TempViewController.swift */; };
+		2B7F971824FB6AF300E14C47 /* DetailLegalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7F971724FB6AF300E14C47 /* DetailLegalPageViewController.swift */; };
 		2B96E61624F1257B0074B922 /* SearchOrAddRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96E61524F1257B0074B922 /* SearchOrAddRateViewController.swift */; };
 		2BAC1EE724DAB42E005D01B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1EE624DAB42E005D01B7 /* AppDelegate.swift */; };
 		2BAC1EE924DAB42E005D01B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1EE824DAB42E005D01B7 /* SceneDelegate.swift */; };
@@ -60,6 +61,7 @@
 		2B09A0AB24F687470035AC66 /* InputAddRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddRateViewController.swift; sourceTree = "<group>"; };
 		2B27D10C24F3C7BA003E60D2 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		2B27D10E24F3CC4F003E60D2 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		2B7F971724FB6AF300E14C47 /* DetailLegalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLegalPageViewController.swift; sourceTree = "<group>"; };
 		2B96E61524F1257B0074B922 /* SearchOrAddRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchOrAddRateViewController.swift; sourceTree = "<group>"; };
 		2BAC1EE324DAB42E005D01B7 /* catering_for_privatejet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = catering_for_privatejet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BAC1EE624DAB42E005D01B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				2B09A0A624F6846E0035AC66 /* SearchRestaurantNameTableViewCell.xib */,
 				2B09A0A924F686870035AC66 /* WhenSearchRestaurantTempViewController.swift */,
 				2B09A0AB24F687470035AC66 /* InputAddRateViewController.swift */,
+				2B7F971724FB6AF300E14C47 /* DetailLegalPageViewController.swift */,
 			);
 			path = catering_for_privatejet;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				2BC9A6C624EFFECD00750A8D /* PhotoUploadViewController.swift in Sources */,
 				2BAC1F1D24DABA75005D01B7 /* SearchResultViewController.swift in Sources */,
 				2BAC1EE924DAB42E005D01B7 /* SceneDelegate.swift in Sources */,
+				2B7F971824FB6AF300E14C47 /* DetailLegalPageViewController.swift in Sources */,
 				2B09A0A424F680D80035AC66 /* SearchRestaurantWhenAddRateViewController.swift in Sources */,
 				2B27D10F24F3CC4F003E60D2 /* TempViewController.swift in Sources */,
 				2BC9A6C824F0030600750A8D /* GetImageViewController.swift in Sources */,

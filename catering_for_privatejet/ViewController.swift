@@ -12,12 +12,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
-    @IBAction func goToNext(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToLegalPage", sender: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(doSomething(notification:)), name: .dismissLegalPage, object: nil)
     }
     
+    @objc func doSomething(notification: NSNotification?) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }
 
+extension Notification.Name {
+   static let dismissLegalPage = Notification.Name("dismissLegalPage")
+}
