@@ -339,6 +339,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                     </view>
                     <navigationItem key="navigationItem" id="i9T-Ds-CKh"/>
                     <connections>
+                        <outlet property="ICAOTextField" destination="1VO-Rg-LhY" id="uZW-j8-Dic"/>
                         <segue destination="xpM-tw-Z6W" kind="show" identifier="goToSearchResultPage" id="7KF-7V-a79"/>
                     </connections>
                 </viewController>
@@ -358,6 +359,13 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 <rect key="frame" x="20" y="188" width="374" height="654"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWe-OQ-OFb">
+                                <rect key="frame" x="186" y="131" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -370,13 +378,14 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                     </view>
                     <navigationItem key="navigationItem" id="0o4-e3-4IL"/>
                     <connections>
+                        <outlet property="searchingICAOCodeLabel" destination="DWe-OQ-OFb" id="Apw-DJ-fMq"/>
                         <outlet property="tableView" destination="MQw-9c-dtn" id="2vX-aZ-iyY"/>
                         <segue destination="lVr-F6-NjW" kind="show" identifier="goToRestaurantDetailPage" id="1AH-1X-MP8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcN-OV-1J7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2387" y="-250"/>
+            <point key="canvasLocation" x="2393" y="-251"/>
         </scene>
         <!--When Search Restaurant Temp View Controller-->
         <scene sceneID="vf4-hG-3nV">

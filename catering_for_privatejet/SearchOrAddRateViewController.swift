@@ -10,12 +10,22 @@ import UIKit
 
 class SearchOrAddRateViewController: UIViewController {
 
+    
+    @IBOutlet weak var ICAOTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "goToSearchResultPage", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSearchResultPage" {
+            let nextVC = segue.destination as! SearchResultViewController
+            nextVC.searchingICAOCode = ICAOTextField.text!
+        }
     }
 
 }
