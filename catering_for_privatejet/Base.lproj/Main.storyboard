@@ -577,7 +577,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant's  Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtZ-IQ-3VY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoogleMap URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtZ-IQ-3VY">
                                 <rect key="frame" x="30" y="454" width="354" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -697,6 +697,17 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                                     <constraint firstAttribute="height" constant="34" id="GRl-55-hyp"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRV-Gx-9OS">
+                                <rect key="frame" x="194" y="455.5" width="20" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="KJL-JN-1kf"/>
+                                    <constraint firstAttribute="height" constant="20" id="kjq-C5-Yie"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="questionmark.circle" catalog="system"/>
+                                <connections>
+                                    <segue destination="LYI-AO-soK" kind="show" id="VFd-sD-v00"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -731,6 +742,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                             <constraint firstItem="2DI-5Z-pex" firstAttribute="top" secondItem="wb7-xu-o9m" secondAttribute="bottom" constant="20" id="JNh-RU-LuY"/>
                             <constraint firstItem="nQX-6s-TV3" firstAttribute="trailing" secondItem="b2p-aH-fyA" secondAttribute="trailing" id="JlO-fM-aZ8"/>
                             <constraint firstItem="QkX-m1-Ksj" firstAttribute="top" secondItem="wb7-xu-o9m" secondAttribute="top" id="Jxx-PT-LqA"/>
+                            <constraint firstItem="FBf-Dj-ESk" firstAttribute="top" secondItem="kRV-Gx-9OS" secondAttribute="bottom" constant="10" id="KNF-cG-yVR"/>
                             <constraint firstItem="hRE-eG-jFs" firstAttribute="centerX" secondItem="8R7-mJ-6ie" secondAttribute="centerX" id="KbT-6l-wEQ"/>
                             <constraint firstItem="nQX-6s-TV3" firstAttribute="leading" secondItem="QkX-m1-Ksj" secondAttribute="trailing" constant="30" id="MIb-6L-yo9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ckO-ls-iaY" secondAttribute="trailing" constant="10" id="NR1-JK-gIB"/>
@@ -775,6 +787,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                             <constraint firstItem="6U1-Xw-hFR" firstAttribute="top" secondItem="SYg-iP-9Ph" secondAttribute="bottom" constant="10" id="iPf-XY-bwy"/>
                             <constraint firstItem="2P5-PB-emV" firstAttribute="leading" secondItem="2DI-5Z-pex" secondAttribute="leading" id="ikL-zZ-kSS"/>
                             <constraint firstItem="6U1-Xw-hFR" firstAttribute="leading" secondItem="SYg-iP-9Ph" secondAttribute="leading" id="jCE-FJ-1mn"/>
+                            <constraint firstItem="mzB-Gv-ock" firstAttribute="trailing" secondItem="kRV-Gx-9OS" secondAttribute="trailing" constant="200" id="jDG-2A-oJM"/>
                             <constraint firstItem="036-H7-lQc" firstAttribute="trailing" secondItem="b2p-aH-fyA" secondAttribute="trailing" id="k8Z-9S-mRB"/>
                             <constraint firstItem="x2A-kN-lVE" firstAttribute="leading" secondItem="6rM-BW-EOk" secondAttribute="trailing" constant="10" id="kXG-9k-FnV"/>
                             <constraint firstItem="SYg-iP-9Ph" firstAttribute="leading" secondItem="b2p-aH-fyA" secondAttribute="leading" id="kvn-iy-4TD"/>
@@ -1324,7 +1337,52 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSG-n8-jQw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6545" y="501"/>
+            <point key="canvasLocation" x="9043" y="256"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uoD-Er-wvd">
+            <objects>
+                <viewController id="LYI-AO-soK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7GP-ig-J9G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1446"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="copy_from_google" translatesAutoresizingMaskIntoConstraints="NO" id="akI-im-Qty">
+                                <rect key="frame" x="57" y="538" width="300" height="370"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="JWV-ZT-cKv"/>
+                                    <constraint firstAttribute="height" constant="370" id="lT0-yE-ANL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please copy from GoogleMap!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOn-gO-fpU">
+                                <rect key="frame" x="87.5" y="477" width="239" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" cyan="0.40059315829999997" magenta="0.96870865679999996" yellow="0.1718214897" black="0.17451435809999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please paste adress field" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGO-tn-DZh">
+                                <rect key="frame" x="108" y="507.5" width="198.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" cyan="0.40059315829999997" magenta="0.96870865679999996" yellow="0.1718214897" black="0.17451435809999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="akI-im-Qty" firstAttribute="top" secondItem="EGO-tn-DZh" secondAttribute="bottom" constant="10" id="0bd-vY-eCv"/>
+                            <constraint firstItem="akI-im-Qty" firstAttribute="centerY" secondItem="7GP-ig-J9G" secondAttribute="centerY" id="G6h-KA-rRp"/>
+                            <constraint firstItem="EGO-tn-DZh" firstAttribute="centerX" secondItem="7GP-ig-J9G" secondAttribute="centerX" id="Wry-07-U7W"/>
+                            <constraint firstItem="EGO-tn-DZh" firstAttribute="top" secondItem="eOn-gO-fpU" secondAttribute="bottom" constant="10" id="bVM-sS-Eni"/>
+                            <constraint firstItem="akI-im-Qty" firstAttribute="centerX" secondItem="7GP-ig-J9G" secondAttribute="centerX" id="fkZ-qc-L8t"/>
+                            <constraint firstItem="eOn-gO-fpU" firstAttribute="centerX" secondItem="7GP-ig-J9G" secondAttribute="centerX" id="zFI-hj-AdU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6B5-Ru-bAg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dfp-PM-YAr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKz-KJ-GBj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6002.898550724638" y="945.53571428571422"/>
         </scene>
         <!--Get Image View Controller-->
         <scene sceneID="lwg-Oo-7yr">
@@ -1356,7 +1414,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gA3-jW-MqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6545" y="1180"/>
+            <point key="canvasLocation" x="9104" y="1093"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -1364,5 +1422,7 @@ These Terms of Use and any policies or operating rules posted by us on the Appli
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="copy_from_google" width="828" height="1792"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
