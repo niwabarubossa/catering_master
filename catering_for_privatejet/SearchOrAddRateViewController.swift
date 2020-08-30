@@ -58,4 +58,10 @@ extension SearchOrAddRateViewController:UITextFieldDelegate{
         self.searchButtonTapped(Any.self)
         return true
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let text = textField.text!
+        textField.text = String((text.prefix(4)))
+        if text.count > 4 { return false }
+        return true
+    }
  }
