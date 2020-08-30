@@ -55,6 +55,7 @@ extension SearchOrAddRateViewController:UITextFieldDelegate{
     }
     func textFieldShouldReturn(_ textField:UITextField) -> Bool {
         self.view.endEditing(true)
+        self.searchButtonTapped(Any.self)
         return true
     }
  }

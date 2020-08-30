@@ -13,6 +13,7 @@ class SearchResultViewController: UIViewController {
 
     var searchingICAOCode:String = ""
     @IBOutlet weak var searchingICAOCodeLabel: UILabel!
+    @IBOutlet weak var noDataLabel: UIView!
     
     @IBOutlet weak var tableView: UITableView!
     private var sendIndexPath:IndexPath = IndexPath(row: 0, section: 0)
@@ -24,6 +25,7 @@ class SearchResultViewController: UIViewController {
         self.tableViewSetup()
         self.getFirestoreData()
         self.searchingICAOCodeLabel.text = searchingICAOCode
+        self.noDataLabelSetup()
     }
 }
 
@@ -48,6 +50,11 @@ extension SearchResultViewController: UITableViewDataSource,UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if dataSource.count == 0 {
+            self.noDataDisplayMode()
+        }else{
+            self.dataExistMode()
+        }
         return dataSource.count
     }
     
@@ -88,5 +95,17 @@ extension SearchResultViewController{
     }
 }
 
-
+extension SearchResultViewController{
+    private func noDataLabelSetup(){
+        self.noDataLabel.isHidden = true
+    }
+    private func dataExistMode(){
+        self.noDataLabel.isHidden = true
+        self.tableView.isHidden = false
+    }
+    private func noDataDisplayMode(){
+        self.noDataLabel.isHidden = false
+        self.tableView.isHidden = true
+    }
+}
 
