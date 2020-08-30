@@ -18,7 +18,9 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet weak var mailadressLabel: UILabel!
     @IBOutlet weak var contactPersonLabel: UILabel!
     @IBOutlet weak var telephoneNumberLabel: UILabel!
-    @IBOutlet weak var adressLabel: UILabel!
+    
+    @IBOutlet weak var adressTextView: UITextView!
+    
     @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var canSpeakEnglishLabel: UILabel!
     @IBOutlet weak var canDelivveryToTheAirportLabel: UILabel!
@@ -35,6 +37,7 @@ class RestaurantDetailViewController: UIViewController {
         didSet{
             self.setInputValue(data: data)
             self.getLatestImagePath()
+            self.createLinkToMap()
         }
     }
     
@@ -55,7 +58,7 @@ class RestaurantDetailViewController: UIViewController {
         }
         self.telephoneNumberLabel.text = data["telephone_number"] as? String
         self.mailadressLabel.text = data["email_adress"] as? String
-        self.adressLabel.text = data["adress"] as? String
+//        self.adressTextView.text = data["adress"] as? String
         self.contactPersonLabel.text = data["contact_person"] as? String
         self.canSpeakEnglishLabel.text = data["speak_english"] as? String
         self.halalAvailableLabel.text = data["halal_available"] as? String
@@ -115,5 +118,24 @@ class RestaurantDetailViewController: UIViewController {
                 imageview?.image = image
             }
         }
+    }
+}
+
+extension RestaurantDetailViewController:UITextViewDelegate{
+    private func createLinkToMap(){
+        let baseString = data["adress"] as? String ?? ""
+        let attributedString = NSMutableAttributedString(string: baseString)
+        attributedString.addAttribute(.link,
+                                      value: baseString,
+                                      range: NSString(string: baseString).range(of: baseString))
+        adressTextView.attributedText = attributedString
+        adressTextView.isSelectable = true
+        adressTextView.isEditable = false
+        adressTextView.delegate = self
+    }
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        UIApplication.shared.open(URL)
+        return false
     }
 }
