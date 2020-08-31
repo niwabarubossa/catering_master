@@ -83,6 +83,10 @@ class InputAddRateViewController: UIViewController{
         cosmosView.didFinishTouchingCosmos = { rating in
             self.cosmosViewRateValue = rating
         }
+        let textViewArray:[UITextView] = [commentTextView,otherTipsTextView]
+        for textview in textViewArray {
+            textview.delegate = self
+        }
     }
 
      @objc func setData(notification: NSNotification?) {
@@ -241,4 +245,14 @@ extension InputAddRateViewController: UIImagePickerControllerDelegate {
     }
     
     
+}
+
+extension InputAddRateViewController:UITextViewDelegate{
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 }
